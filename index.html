@@ -115,7 +115,7 @@
         }
 
         .logo img {
-            height: 64px; /* Increased logo size */
+            height: 72px; /* Increased logo size from 64px to 72px */
             width: auto;
             object-fit: contain;
         }
@@ -672,6 +672,45 @@
         .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; color: var(--text-light); font-size: 0.8rem; }
 
         /* =========================================
+           LOGO SPLASH ANIMATION (Desktop Only)
+           ========================================= */
+        .logo-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-body);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-splash.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .logo-splash img {
+            height: 200px; /* Large splash size */
+            width: auto;
+            object-fit: contain;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-splash.hidden img {
+            height: 72px; /* Shrinks to header logo size */
+            transform: translateY(-50vh); /* Moves up to header position */
+        }
+
+        /* Hide splash on mobile */
+        @media (max-width: 1100px) {
+            .logo-splash { display: none !important; }
+        }
+
+        /* =========================================
            RESPONSIVE DESIGN
            ========================================= */
         @media (min-width: 1101px) {
@@ -712,6 +751,11 @@
 </head>
 <body>
 
+    <!-- LOGO SPLASH SCREEN (Desktop Only) -->
+    <div class="logo-splash" id="logoSplash">
+        <img src="https://cdn.shopify.com/s/files/1/0694/4053/6660/files/ChatGPT_Image_22_._2026_._20_34_13.png?v=1790094863" alt="All Quality Insurance Logo">
+    </div>
+
     <!-- HEADER - Centered Logo Layout (Desktop) -->
     <header class="header">
         <div class="container">
@@ -742,8 +786,22 @@
                         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </button>
                     <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle dark mode">
-                        <svg class="sun-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                        <svg class="moon-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        <!-- Sun Icon -->
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <!-- Moon Icon -->
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -785,8 +843,22 @@
         </div>
 
         <div class="mobile-theme-toggle" id="mobileThemeToggle">
-            <svg class="sun-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <!-- Sun Icon -->
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon -->
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
             <span>Toggle Theme</span>
         </div>
     </div>
@@ -972,7 +1044,8 @@
                         <textarea id="message" name="message" rows="4" placeholder="Tell us about your facility or any specific questions..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem;">
+                    <!-- Reduced Button Size -->
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 0.9rem;">
                         Submit Quote Request
                         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </button>
@@ -1058,10 +1131,13 @@
                         <label for="modal-message">Additional Details</label>
                         <textarea id="modal-message" name="message" rows="3" placeholder="Tell us about your facility..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem;">
+                    
+                    <!-- Reduced Button Size in Modal -->
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 0.9rem;">
                         Send Quote Request
                         <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                     </button>
+                    
                     <p class="form-privacy">🔒 Your information is secure and will only be used to provide your insurance quote.</p>
                 </form>
             </div>
@@ -1102,6 +1178,21 @@
 
     <!-- SCRIPTS -->
     <script>
+        // Logo Splash Animation (Desktop Only)
+        window.addEventListener('load', () => {
+            const splash = document.getElementById('logoSplash');
+            if (splash && window.innerWidth > 1100) {
+                setTimeout(() => {
+                    splash.classList.add('hidden');
+                }, 800); // Show splash for 0.8 seconds
+                
+                // Remove splash from DOM after animation completes
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                }, 1600);
+            }
+        });
+
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
