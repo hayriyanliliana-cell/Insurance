@@ -3,56 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Quality Insurance Services | Workers' Comp & Business Insurance in Minutes</title>
+    <title>All Quality Insurance Services | Trusted Care Facility Insurance</title>
     <meta name="description" content="All Quality Insurance Services offers Workers Compensation, RCFE Liability, and Commercial Property insurance exclusively for care facilities.">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         /* =========================================
-           CSS VARIABLES - eCompNow Color Palette
+           CSS VARIABLES - Color Hunt Palette
+           #253C6D, #30497D, #455B8A, #F2842F
            ========================================= */
         :root {
-            --gold: #E8A838;
-            --gold-dark: #D4941F;
-            --gold-light: #F4C76B;
-            --gold-glow: rgba(232, 168, 56, 0.4);
-            --navy: #0F172A;
-            --navy-light: #1E293B;
-            --text-main: #0F172A;
-            --text-muted: #475569;
-            --text-light: #64748B;
+            --primary: #253C6D;       /* Deep Blue */
+            --secondary: #30497D;     /* Medium Blue */
+            --accent: #455B8A;        /* Lighter Blue/Grey */
+            --highlight: #F2842F;     /* Orange */
+            --highlight-hover: #d97224;
+            
             --bg-body: #FFFFFF;
-            --bg-soft: #FAFAFA;
+            --bg-soft: #F8FAFC;       /* Very light grey/blue tint */
             --bg-card: #FFFFFF;
+            
+            --text-main: #253C6D;     /* Using primary dark blue for text */
+            --text-muted: #455B8A;
+            --text-light: #64748B;
+            
             --border: #E2E8F0;
-            --border-light: #F1F5F9;
-            --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
-            --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
-            --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.1);
-            --shadow-gold: 0 8px 24px rgba(232, 168, 56, 0.35);
+            
+            --shadow-sm: 0 1px 2px rgba(37, 60, 109, 0.05);
+            --shadow: 0 4px 12px rgba(37, 60, 109, 0.08);
+            --shadow-lg: 0 12px 32px rgba(37, 60, 109, 0.12);
+            --shadow-highlight: 0 8px 24px rgba(242, 132, 47, 0.3);
+            
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
-            --gold: #F4C76B;
-            --gold-dark: #E8A838;
-            --gold-light: #FDE68A;
-            --gold-glow: rgba(244, 199, 107, 0.3);
-            --navy: #F8FAFC;
-            --navy-light: #E2E8F0;
+            --primary: #455B8A;
+            --secondary: #30497D;
+            --accent: #253C6D;
+            --highlight: #F2842F;
+            --highlight-hover: #f59e56;
+            
+            --bg-body: #0F172A;
+            --bg-soft: #1E293B;
+            --bg-card: #1E293B;
+            
             --text-main: #F8FAFC;
             --text-muted: #CBD5E1;
             --text-light: #94A3B8;
-            --bg-body: #0B1120;
-            --bg-soft: #111827;
-            --bg-card: #1E293B;
+            
             --border: #334155;
-            --border-light: #1E293B;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
         }
 
@@ -69,7 +74,6 @@
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         a { text-decoration: none; color: inherit; transition: var(--transition); }
@@ -82,16 +86,18 @@
         }
 
         /* =========================================
-           HEADER - eCompNow Style
+           HEADER
            ========================================= */
         .header {
-            background-color: var(--bg-body);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 1000;
             transition: var(--transition);
         }
+        [data-theme="dark"] .header { background-color: rgba(15, 23, 42, 0.95); }
 
         .header-inner {
             display: flex;
@@ -104,46 +110,13 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--text-main);
-            letter-spacing: -0.02em;
-            flex-shrink: 0;
+            gap: 12px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 12px var(--gold-glow);
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-
-        .logo-text .brand {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--navy);
-        }
-        [data-theme="dark"] .logo-text .brand { color: var(--text-main); }
-
-        .logo-text .sub {
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: var(--gold-dark);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+        .logo img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-menu {
@@ -154,66 +127,43 @@
             justify-content: center;
         }
 
-        .nav-item {
-            position: relative;
-        }
-
         .nav-link {
             display: flex;
             align-items: center;
             gap: 4px;
-            padding: 10px 14px;
+            padding: 10px 16px;
             font-size: 0.95rem;
             font-weight: 500;
-            color: var(--text-main);
-            border-radius: 6px;
+            color: var(--text-muted);
+            border-radius: 8px;
             transition: var(--transition);
         }
 
         .nav-link:hover {
             background-color: var(--bg-soft);
-            color: var(--gold-dark);
-        }
-        [data-theme="dark"] .nav-link:hover { background-color: var(--bg-card); }
-
-        .nav-link svg {
-            width: 12px;
-            height: 12px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2.5;
+            color: var(--primary);
         }
 
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
+            gap: 16px;
         }
 
         .header-phone {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-main);
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
             transition: var(--transition);
         }
 
-        .header-phone:hover {
-            background-color: var(--bg-soft);
-        }
-
-        .header-phone svg {
-            width: 16px;
-            height: 16px;
-            stroke: var(--gold-dark);
-            fill: none;
-            stroke-width: 2;
-        }
+        .header-phone:hover { background-color: var(--bg-soft); color: var(--primary); }
+        .header-phone svg { width: 18px; height: 18px; stroke: var(--highlight); fill: none; stroke-width: 2; }
 
         .btn {
             display: inline-flex;
@@ -232,810 +182,292 @@
             overflow: hidden;
         }
 
-        .btn svg {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2.5;
-            flex-shrink: 0;
-        }
-
-        /* Shining Effect for Buttons */
         .btn::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.4) 50%,
-                transparent 100%
-            );
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             transition: left 0.6s ease;
         }
+        .btn:hover::before { left: 100%; }
 
-        .btn:hover::before {
-            left: 100%;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-hover) 100%);
+            color: #FFFFFF;
+            box-shadow: var(--shadow-highlight);
         }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(242, 132, 47, 0.4); }
 
         .btn-outline {
             background: transparent;
-            border: 1.5px solid var(--border);
+            border: 2px solid var(--border);
             color: var(--text-main);
         }
-
-        .btn-outline:hover {
-            border-color: var(--gold);
-            color: var(--gold-dark);
-            background-color: rgba(232, 168, 56, 0.05);
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            color: #FFFFFF;
-            box-shadow: 0 4px 14px var(--gold-glow);
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px var(--gold-glow);
-        }
-
-        .btn-gold::before {
-            background: linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.5) 50%,
-                transparent 100%
-            );
-        }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); background: var(--bg-soft); }
 
         .btn-ghost {
-            background: transparent;
-            border: none;
-            color: var(--text-main);
-            padding: 10px;
+            background: transparent; border: none; color: var(--text-muted); padding: 10px;
         }
+        .btn-ghost:hover { color: var(--primary); background: var(--bg-soft); }
+        .btn-ghost svg { width: 20px; height: 20px; }
 
-        .btn-ghost:hover {
-            background-color: var(--bg-soft);
-        }
-
-        .btn-ghost svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-main);
-            padding: 8px;
-        }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
 
         /* =========================================
-           HERO SECTION - eCompNow Style
+           HERO SECTION - Text Only (No Image)
            ========================================= */
         .hero {
             padding: 100px 0 120px;
-            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-body) 100%);
+            background: radial-gradient(circle at 50% 0%, rgba(37, 60, 109, 0.05) 0%, transparent 50%), var(--bg-body);
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
-            opacity: 0.4;
-            pointer-events: none;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background-color: rgba(232, 168, 56, 0.12);
-            color: var(--gold-dark);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 32px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border: 1px solid rgba(232, 168, 56, 0.2);
-        }
-        [data-theme="dark"] .hero-badge {
-            background-color: rgba(244, 199, 107, 0.1);
-            color: var(--gold-light);
-            border-color: rgba(244, 199, 107, 0.2);
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
+        .hero-content h1 {
+            font-size: 3.75rem;
             font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: 24px;
-            letter-spacing: -0.04em;
-            color: var(--text-main);
-        }
-
-        .hero h1 .highlight {
-            color: var(--gold-dark);
-            position: relative;
-            display: inline-block;
-        }
-        [data-theme="dark"] .hero h1 .highlight { color: var(--gold); }
-
-        .hero h1 .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 0;
-            right: 0;
-            height: 12px;
-            background: var(--gold);
-            opacity: 0.2;
-            border-radius: 4px;
-            z-index: -1;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 48px;
-            max-width: 640px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
-        }
-
-        .hero-buttons .btn {
-            padding: 16px 32px;
-            font-size: 1.05rem;
-            font-weight: 600;
-        }
-
-        /* =========================================
-           WHY US SECTION - eCompNow 2nd Screenshot Style
-           ========================================= */
-        .why-us {
-            padding: 100px 0;
-            background-color: var(--bg-body);
-        }
-
-        .why-us-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .why-us-label {
-            display: inline-block;
-            color: var(--gold-dark);
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-        [data-theme="dark"] .why-us-label { color: var(--gold); }
-
-        .why-us h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--text-main);
+            line-height: 1.1;
             margin-bottom: 24px;
             letter-spacing: -0.03em;
-            line-height: 1.1;
+            color: var(--text-main);
         }
 
-        .why-us-subtitle {
-            font-size: 1.15rem;
+        .hero-content h1 span {
+            color: var(--highlight);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
             color: var(--text-muted);
-            margin-bottom: 56px;
+            margin-bottom: 40px;
             max-width: 640px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.7;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px 48px;
-            text-align: left;
-            max-width: 900px;
-            margin: 0 auto;
+        .hero-buttons { 
+            display: flex; 
+            gap: 16px; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+        .hero-buttons .btn { padding: 16px 32px; font-size: 1.05rem; }
+
+        /* =========================================
+           WHY US SECTION
+           ========================================= */
+        .why-us { padding: 100px 0; background-color: var(--bg-soft); }
+        .why-us-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+        
+        .section-label {
+            display: inline-block;
+            color: var(--highlight);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            background: rgba(242, 132, 47, 0.1);
+            padding: 6px 16px;
+            border-radius: 50px;
         }
 
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
+        .why-us h2 { font-size: 3rem; font-weight: 900; color: var(--text-main); margin-bottom: 24px; letter-spacing: -0.02em; }
+        .why-us-subtitle { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 56px; max-width: 640px; margin-left: auto; margin-right: auto; }
 
+        .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; text-align: left; }
+        
+        .benefit-item { display: flex; align-items: flex-start; gap: 16px; }
+        
         .benefit-check {
-            width: 28px;
-            height: 28px;
-            min-width: 28px;
-            background-color: rgba(232, 168, 56, 0.12);
+            width: 28px; height: 28px; min-width: 28px;
+            background-color: var(--highlight);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             margin-top: 2px;
+            box-shadow: 0 4px 10px rgba(242, 132, 47, 0.3);
         }
-        [data-theme="dark"] .benefit-check {
-            background-color: rgba(244, 199, 107, 0.15);
-        }
-
-        .benefit-check svg {
-            width: 14px;
-            height: 14px;
-            stroke: var(--gold-dark);
-            fill: none;
-            stroke-width: 3;
-        }
-        [data-theme="dark"] .benefit-check svg { stroke: var(--gold); }
-
-        .benefit-item p {
-            font-size: 1.05rem;
-            color: var(--text-main);
-            font-weight: 500;
-            line-height: 1.5;
-        }
+        .benefit-check svg { width: 14px; height: 14px; stroke: white; fill: none; stroke-width: 3; }
+        .benefit-item p { font-size: 1.05rem; color: var(--text-main); font-weight: 500; line-height: 1.5; }
 
         /* =========================================
            SERVICES SECTION
            ========================================= */
-        .services {
-            padding: 100px 0;
-            background-color: var(--bg-soft);
-        }
+        .services { padding: 100px 0; background-color: var(--bg-body); }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-header h2 { font-size: 2.75rem; font-weight: 900; color: var(--text-main); margin-bottom: 16px; }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
 
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px;
-        }
-
-        .section-label {
-            display: inline-block;
-            color: var(--gold-dark);
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-        [data-theme="dark"] .section-label { color: var(--gold); }
-
-        .section-header h2 {
-            font-size: 2.75rem;
-            font-weight: 900;
-            color: var(--text-main);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-        }
-
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        
         .service-card {
             background: var(--bg-card);
             padding: 40px 32px;
-            border-radius: 16px;
+            border-radius: 20px;
             border: 1px solid var(--border);
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gold);
-        }
+        .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--highlight); }
 
         .service-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, rgba(232, 168, 56, 0.15) 0%, rgba(232, 168, 56, 0.05) 100%);
-            color: var(--gold-dark);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, rgba(37, 60, 109, 0.1) 0%, rgba(48, 73, 125, 0.1) 100%);
+            color: var(--primary);
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
             margin-bottom: 24px;
         }
-        [data-theme="dark"] .service-icon {
-            background: linear-gradient(135deg, rgba(244, 199, 107, 0.15) 0%, rgba(244, 199, 107, 0.05) 100%);
-            color: var(--gold);
-        }
 
-        .service-card h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.65;
-        }
+        .service-card h3 { font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px; }
+        .service-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.65; }
 
         /* =========================================
            REVIEWS SECTION
            ========================================= */
-        .reviews {
-            padding: 100px 0;
-            background-color: var(--bg-body);
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-        }
-
+        .reviews { padding: 100px 0; background-color: var(--bg-soft); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        
         .review-card {
             background: var(--bg-card);
             padding: 32px;
-            border-radius: 16px;
+            border-radius: 20px;
             border: 1px solid var(--border);
-            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
-
-        .review-card:hover {
-            box-shadow: var(--shadow);
-        }
-
-        .stars {
-            color: var(--gold-dark);
-            font-size: 1.15rem;
-            margin-bottom: 16px;
-            letter-spacing: 2px;
-        }
-        [data-theme="dark"] .stars { color: var(--gold); }
-
-        .review-text {
-            color: var(--text-main);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-
-        .reviewer-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-        }
-
+        .stars { color: var(--highlight); font-size: 1.15rem; margin-bottom: 16px; letter-spacing: 2px; }
+        .review-text { color: var(--text-main); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+        
+        .reviewer-info { display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid var(--border); }
         .reviewer-avatar {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1rem;
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1rem;
         }
-
-        .reviewer-details h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 2px;
-        }
-
-        .reviewer-details span {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
+        .reviewer-details h4 { font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
+        .reviewer-details span { font-size: 0.85rem; color: var(--text-light); }
 
         /* =========================================
            QUOTE / CONTACT SECTION
            ========================================= */
-        .quote-section {
-            padding: 100px 0;
-            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-body) 100%);
-        }
-
-        .quote-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 64px;
-            align-items: start;
-        }
-
-        .quote-info h2 {
-            font-size: 2.75rem;
-            font-weight: 900;
-            color: var(--text-main);
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-        }
-
-        .quote-info p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 32px;
-            line-height: 1.7;
-        }
-
+        .quote-section { padding: 100px 0; background-color: var(--bg-body); }
+        .quote-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+        
+        .quote-info h2 { font-size: 2.75rem; font-weight: 900; color: var(--text-main); margin-bottom: 20px; }
+        .quote-info p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px; }
+        
         .contact-highlight {
-            background: var(--bg-card);
+            background: var(--bg-soft);
             padding: 28px;
             border-radius: 16px;
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+            border: 1px solid rgba(242, 132, 47, 0.2);
+            display: flex; flex-direction: column; gap: 8px;
         }
-
-        .contact-highlight span {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .contact-highlight a {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--gold-dark);
-        }
-        [data-theme="dark"] .contact-highlight a { color: var(--gold); }
+        .contact-highlight span { font-size: 0.9rem; color: var(--text-light); font-weight: 500; }
+        .contact-highlight a { font-size: 1.75rem; font-weight: 800; color: var(--highlight); }
 
         .quote-form {
             background: var(--bg-card);
             padding: 40px;
-            border-radius: 20px;
+            border-radius: 24px;
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
         }
-
-        .quote-form h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 24px;
-        }
-
+        .quote-form h3 { font-size: 1.5rem; font-weight: 700; color: var(--text-main); margin-bottom: 24px; }
+        
         .form-group { margin-bottom: 20px; }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-main);
-            font-size: 0.9rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            background-color: var(--bg-body);
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-main); font-size: 0.9rem; }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 14px 16px;
+            background-color: var(--bg-soft);
             border: 1.5px solid var(--border);
-            border-radius: 10px;
-            font-size: 1rem;
-            font-family: inherit;
-            color: var(--text-main);
+            border-radius: 12px;
+            font-size: 1rem; font-family: inherit; color: var(--text-main);
             transition: var(--transition);
         }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 4px var(--gold-glow);
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--highlight);
+            box-shadow: 0 0 0 4px rgba(242, 132, 47, 0.1);
+            background-color: var(--bg-card);
         }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .form-privacy {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-top: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-privacy { text-align: center; font-size: 0.8rem; color: var(--text-light); margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 6px; }
 
         /* =========================================
            MODALS
            ========================================= */
         .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(15, 23, 42, 0.6);
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(37, 60, 109, 0.6);
             backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
             animation: fadeIn 0.3s ease;
         }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+        .modal-overlay.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
         .modal {
-            background: var(--bg-card);
-            border-radius: 20px;
-            max-width: 560px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border);
-            animation: slideUp 0.3s ease;
-            position: relative;
+            background: var(--bg-card); border-radius: 24px; max-width: 560px; width: 100%;
+            max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border); animation: slideUp 0.3s ease; position: relative;
         }
-
-        .modal-header {
-            padding: 28px 32px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .modal-header h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-main);
-            letter-spacing: -0.01em;
-        }
-
-        .modal-header p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-top: 6px;
-        }
-
+        .modal-header { padding: 28px 32px 0; display: flex; justify-content: space-between; align-items: flex-start; }
+        .modal-header h3 { font-size: 1.5rem; font-weight: 800; color: var(--text-main); }
+        .modal-header p { font-size: 0.95rem; color: var(--text-muted); margin-top: 6px; }
         .modal-close {
-            background: var(--bg-soft);
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            transition: var(--transition);
-            flex-shrink: 0;
+            background: var(--bg-soft); border: none; width: 36px; height: 36px; border-radius: 50%;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            color: var(--text-muted); transition: var(--transition);
         }
+        .modal-close:hover { background: var(--border); color: var(--text-main); }
+        .modal-close svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+        .modal-body { padding: 28px 32px 32px; }
 
-        .modal-close:hover {
-            background: var(--border);
-            color: var(--text-main);
-        }
-
-        .modal-close svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2.5;
-        }
-
-        .modal-body {
-            padding: 28px 32px 32px;
-        }
-
-        /* Specialist Modal */
-        .specialist-content {
-            text-align: center;
-            padding: 20px 0;
-        }
-
+        .specialist-content { text-align: center; padding: 20px 0; }
         .specialist-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            box-shadow: 0 8px 24px var(--gold-glow);
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-hover) 100%);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px; box-shadow: var(--shadow-highlight);
         }
-
-        .specialist-icon svg {
-            width: 40px;
-            height: 40px;
-            stroke: white;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .specialist-content h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 8px;
-        }
-
-        .specialist-content > p {
-            color: var(--text-muted);
-            margin-bottom: 28px;
-            font-size: 1rem;
-        }
-
+        .specialist-icon svg { width: 40px; height: 40px; stroke: white; fill: none; stroke-width: 2; }
+        .specialist-content h4 { font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
+        .specialist-content > p { color: var(--text-muted); margin-bottom: 28px; font-size: 1rem; }
+        
         .specialist-phone {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--bg-soft);
-            padding: 20px 32px;
-            border-radius: 16px;
-            border: 2px solid var(--gold);
-            margin-bottom: 24px;
-            transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 12px;
+            background: var(--bg-soft); padding: 20px 32px; border-radius: 16px;
+            border: 2px solid var(--highlight); margin-bottom: 24px; transition: var(--transition);
         }
-
-        .specialist-phone:hover {
-            background: rgba(232, 168, 56, 0.08);
-            transform: scale(1.02);
-        }
-
-        .specialist-phone svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--gold-dark);
-            fill: none;
-            stroke-width: 2;
-        }
-        [data-theme="dark"] .specialist-phone svg { stroke: var(--gold); }
-
-        .specialist-phone a {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--text-main);
-            letter-spacing: -0.02em;
-        }
-
-        .specialist-hours {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .specialist-hours svg {
-            width: 14px;
-            height: 14px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
+        .specialist-phone:hover { background: rgba(242, 132, 47, 0.08); transform: scale(1.02); }
+        .specialist-phone svg { width: 24px; height: 24px; stroke: var(--highlight); fill: none; stroke-width: 2; }
+        .specialist-phone a { font-size: 1.75rem; font-weight: 800; color: var(--text-main); }
+        .specialist-hours { font-size: 0.9rem; color: var(--text-light); display: flex; align-items: center; justify-content: center; gap: 6px; }
 
         /* =========================================
            FOOTER
            ========================================= */
-        .footer {
-            background-color: var(--bg-card);
-            border-top: 1px solid var(--border);
-            padding: 60px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
+        .footer { background-color: var(--bg-card); border-top: 1px solid var(--border); padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
         .footer-brand .logo { margin-bottom: 16px; }
-
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            max-width: 320px;
-        }
-
-        .footer h4 {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
+        .footer-brand p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; max-width: 320px; }
+        .footer h4 { font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.08em; }
         .footer-links li { margin-bottom: 12px; }
-
-        .footer-links a {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .footer-links a:hover { color: var(--gold-dark); }
-        [data-theme="dark"] .footer-links a:hover { color: var(--gold); }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-            text-align: center;
-            color: var(--text-light);
-            font-size: 0.85rem;
-        }
+        .footer-links a { color: var(--text-muted); font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--highlight); }
+        .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; color: var(--text-light); font-size: 0.85rem; }
 
         /* =========================================
            RESPONSIVE DESIGN
@@ -1044,104 +476,48 @@
             .nav-menu { display: none; }
             .header-phone { display: none; }
             .mobile-menu-btn { display: block; }
-            
             .nav-menu.mobile-active {
-                display: flex;
-                position: fixed;
-                top: 80px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: var(--bg-body);
-                flex-direction: column;
-                padding: 32px 24px;
-                gap: 8px;
-                align-items: stretch;
-                z-index: 999;
-                overflow-y: auto;
+                display: flex; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
+                background: var(--bg-body); flex-direction: column; padding: 32px 24px;
+                gap: 8px; align-items: stretch; z-index: 999; overflow-y: auto;
             }
-            
-            .nav-menu.mobile-active .nav-link {
-                padding: 16px;
-                font-size: 1.1rem;
-                border-bottom: 1px solid var(--border);
-            }
-            
-            .nav-menu.mobile-active .btn {
-                margin-top: 16px;
-                width: 100%;
-            }
+            .nav-menu.mobile-active .nav-link { padding: 16px; font-size: 1.1rem; border-bottom: 1px solid var(--border); }
+            .nav-menu.mobile-active .btn { margin-top: 16px; width: 100%; }
         }
 
         @media (max-width: 900px) {
+            .hero-content h1 { font-size: 3rem; }
             .quote-wrapper { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .hero h1 { font-size: 3rem; }
-            .why-us h2 { font-size: 2.5rem; }
             .benefits-grid { grid-template-columns: 1fr; gap: 20px; }
         }
 
         @media (max-width: 640px) {
-            .hero { padding: 60px 0 80px; }
-            .hero h1 { font-size: 2.25rem; }
-            .hero p { font-size: 1.05rem; }
+            .hero-content h1 { font-size: 2.25rem; }
             .hero-buttons .btn { width: 100%; }
-            .section-header h2 { font-size: 2rem; }
-            .why-us h2 { font-size: 2rem; }
-            .why-us, .services, .reviews, .quote-section { padding: 70px 0; }
+            .section-header h2, .why-us h2 { font-size: 2rem; }
             .form-row { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .quote-form { padding: 24px; }
-            .modal-header, .modal-body { padding-left: 24px; padding-right: 24px; }
-            .specialist-phone a { font-size: 1.4rem; }
-            .specialist-phone { padding: 16px 24px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER - eCompNow Style -->
+    <!-- HEADER -->
     <header class="header">
         <div class="container header-inner">
             <a href="#" class="logo">
-                <div class="logo-icon">️</div>
-                <div class="logo-text">
-                    <span class="brand">ALL QUALITY</span>
-                    <span class="sub">Insurance Services</span>
-                </div>
+                <!-- New Logo Here -->
+                <img src="https://cdn.shopify.com/s/files/1/0694/4053/6660/files/ChatGPT_Image_22_._2026_._20_34_13.png?v=1790094863" alt="All Quality Insurance Logo">
             </a>
             
             <nav class="nav-menu" id="navMenu">
-                <div class="nav-item">
-                    <a href="#services" class="nav-link">
-                        Insurance
-                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </a>
-                </div>
-                <div class="nav-item">
-                    <a href="#quote" class="nav-link">
-                        Service Center
-                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </a>
-                </div>
-                <div class="nav-item">
-                    <a href="#reviews" class="nav-link">
-                        Partners
-                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </a>
-                </div>
-                <div class="nav-item">
-                    <a href="#why-us" class="nav-link">
-                        Resources
-                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </a>
-                </div>
-                <div class="nav-item">
-                    <a href="#" class="nav-link">
-                        Company
-                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                    </a>
-                </div>
+                <a href="#services" class="nav-link">Insurance</a>
+                <a href="#quote" class="nav-link">Service Center</a>
+                <a href="#reviews" class="nav-link">Partners</a>
+                <a href="#why-us" class="nav-link">Resources</a>
+                <a href="#" class="nav-link">Company</a>
             </nav>
 
             <div class="header-actions">
@@ -1149,7 +525,7 @@
                     <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     (818) 968-6652
                 </a>
-                <button class="btn btn-gold" onclick="openModal('quoteModal')">
+                <button class="btn btn-primary" onclick="openModal('quoteModal')">
                     Get My Quotes
                     <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </button>
@@ -1162,15 +538,15 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Text Only, No Image) -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">Business Insurance Made Easy</div>
-                <h1>Workers' Comp & Business<br>Insurance <span class="highlight">In Minutes</span></h1>
+                <div class="section-label">Business Insurance Made Easy</div>
+                <h1>Workers' Comp & Business<br>Insurance <span>In Minutes</span></h1>
                 <p>Exclusive insurance solutions for Care Facilities and RCFE Owners. We shop top carriers to find you the right coverage at the best price.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-gold" onclick="openModal('quoteModal')">
+                    <button class="btn btn-primary" onclick="openModal('quoteModal')">
                         Get My Quotes
                         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </button>
@@ -1183,37 +559,29 @@
         </div>
     </section>
 
-    <!-- WHY US SECTION - eCompNow 2nd Screenshot Style -->
+    <!-- WHY US SECTION -->
     <section id="why-us" class="why-us">
         <div class="container">
             <div class="why-us-inner">
-                <div class="why-us-label">Why All Quality</div>
+                <div class="section-label">Why All Quality</div>
                 <h2>Save Time, Save Money.</h2>
                 <p class="why-us-subtitle">We've turned buying business insurance into a fast, simple experience, shopping top carriers to land you the right coverage at the best price.</p>
                 
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <div class="benefit-check">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        </div>
+                        <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
                         <p>Minimize your insurance costs without compromising coverages</p>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-check">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        </div>
+                        <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
                         <p>Mitigate insurance claims through loss control and safety</p>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-check">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        </div>
+                        <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
                         <p>Reduce your experience modification through claims management</p>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-check">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        </div>
+                        <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
                         <p>Reduce your audit exposure</p>
                     </div>
                 </div>
@@ -1236,12 +604,12 @@
                     <p>Exclusive for Care Facilities with the lowest rates on the market. Whether you are just shopping or a first timer, this is the best option.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"></div>
+                    <div class="service-icon">🏥</div>
                     <h3>RCFE Liability</h3>
                     <p>Get a General & Professional Liability Insurance quote. Bind and get a Certificate of Insurance.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏠</div>
+                    <div class="service-icon"></div>
                     <h3>Commercial Property</h3>
                     <p>Many RCFE Owners don't realize their home must be protected by commercial property insurance. Get a quote today.</p>
                 </div>
@@ -1345,7 +713,7 @@
                         <textarea id="message" name="message" rows="4" placeholder="Tell us about your facility or any specific questions..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-gold" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.05rem;">
                         Submit Quote Request
                         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </button>
@@ -1362,11 +730,8 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">
-                        <div class="logo-icon" style="width: 36px; height: 36px; font-size: 1rem;">️</div>
-                        <div class="logo-text">
-                            <span class="brand">ALL QUALITY</span>
-                            <span class="sub">Insurance Services</span>
-                        </div>
+                        <!-- Logo in Footer -->
+                        <img src="https://cdn.shopify.com/s/files/1/0694/4053/6660/files/ChatGPT_Image_22_._2026_._20_34_13.png?v=1790094863" alt="All Quality Insurance Logo" style="height: 40px;">
                     </div>
                     <p>Providing first-class insurance services exclusively for Care Facilities and RCFE Owners with the lowest rates on the market.</p>
                 </div>
@@ -1382,8 +747,8 @@
                 <div>
                     <h4>Contact Us</h4>
                     <ul class="footer-links">
-                        <li>📞 <a href="tel:18189686652">1-(818) 968-6652</a></li>
-                        <li>📍 California, USA</li>
+                        <li> <a href="tel:18189686652">1-(818) 968-6652</a></li>
+                        <li> California, USA</li>
                     </ul>
                 </div>
             </div>
@@ -1393,7 +758,7 @@
         </div>
     </footer>
 
-    <!-- QUOTE MODAL (Get My Quotes) -->
+    <!-- QUOTE MODAL -->
     <div class="modal-overlay" id="quoteModal" onclick="closeModalOnOverlay(event, 'quoteModal')">
         <div class="modal">
             <div class="modal-header">
@@ -1417,12 +782,10 @@
                             <input type="tel" id="modal-phone" name="phone" required placeholder="(818) 000-0000">
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="modal-email">Email Address *</label>
                         <input type="email" id="modal-email" name="email" required placeholder="john@example.com">
                     </div>
-
                     <div class="form-group">
                         <label for="modal-service">Insurance Product Needed *</label>
                         <select id="modal-service" name="service" required>
@@ -1433,24 +796,21 @@
                             <option value="Other">Other / Not Sure</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="modal-message">Additional Details</label>
                         <textarea id="modal-message" name="message" rows="3" placeholder="Tell us about your facility..."></textarea>
                     </div>
-
-                    <button type="submit" class="btn btn-gold" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.05rem;">
                         Send Quote Request
                         <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                     </button>
-                    
                     <p class="form-privacy">🔒 Your information is secure and will only be used to provide your insurance quote.</p>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- SPECIALIST MODAL (Talk to a Specialist) -->
+    <!-- SPECIALIST MODAL -->
     <div class="modal-overlay" id="specialistModal" onclick="closeModalOnOverlay(event, 'specialistModal')">
         <div class="modal">
             <div class="modal-header">
@@ -1469,12 +829,10 @@
                     </div>
                     <h4>Speak with an Insurance Agent</h4>
                     <p>Get personalized advice for your care facility's insurance needs.</p>
-                    
                     <div class="specialist-phone">
                         <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                         <a href="tel:18189686652">1-(818) 968-6652</a>
                     </div>
-                    
                     <div class="specialist-hours">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                         Monday – Friday, 9:00 AM – 6:00 PM PST
@@ -1486,20 +844,17 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const nav = document.getElementById('navMenu');
             nav.classList.toggle('mobile-active');
         }
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('#navMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navMenu').classList.remove('mobile-active');
             });
         });
 
-        // Modal Functions
         function openModal(id) {
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1516,7 +871,6 @@
             }
         }
 
-        // Close modal on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal('quoteModal');
@@ -1524,7 +878,6 @@
             }
         });
 
-        // Dark/Light Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
         const sunIcon = themeToggle.querySelector('.sun-icon');
         const moonIcon = themeToggle.querySelector('.moon-icon');
@@ -1551,7 +904,6 @@
             }
         }
 
-        // Form submission handler
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function(e) {
                 if (this.action.includes('YOUR_FORM_ID')) {
