@@ -1,767 +1,710 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Quality Insurance Services | Workers' Comp for RCFE & Home Care in CA</title>
-  <meta name="description" content="Affordable Workers' Compensation insurance for California RCFE and Home Care agencies. Free Risk Management Services included.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Quality Insurance Services | First Class Insurance for Care Facilities</title>
+    <meta name="description" content="All Quality Insurance Services offers Workers Compensation, RCFE Liability, and Commercial Property insurance exclusively for care facilities.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           CSS VARIABLES (LIGHT & DARK MODE)
+           ========================================= */
+        :root {
+            --primary: #0052cc;
+            --primary-hover: #003d99;
+            --accent: #00875a;
+            --bg-body: #ffffff;
+            --bg-surface: #f4f5f7;
+            --bg-card: #ffffff;
+            --text-main: #172b4d;
+            --text-muted: #5e6c84;
+            --border: #dfe1e6;
+            --shadow: 0 4px 12px rgba(9, 30, 66, 0.08);
+            --shadow-hover: 0 8px 24px rgba(9, 30, 66, 0.12);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary: #4c9aff;
+            --primary-hover: #80bfff;
+            --accent: #36b37e;
+            --bg-body: #0d1117;
+            --bg-surface: #161b22;
+            --bg-card: #21262d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border: #30363d;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5);
+            --header-bg: rgba(13, 17, 23, 0.95);
+        }
+
+        /* =========================================
+           RESET & BASE
+           ========================================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =========================================
+           HEADER & NAVIGATION
+           ========================================= */
+        .header {
+            background-color: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 0.95rem;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+        }
+        [data-theme="dark"] .btn-primary { color: #0d1117; }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .theme-toggle:hover { background-color: var(--bg-surface); }
+        .theme-toggle svg { width: 20px; height: 20px; fill: currentColor; }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-body) 100%);
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(0, 82, 204, 0.1);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        [data-theme="dark"] .hero-badge { background-color: rgba(76, 154, 255, 0.15); }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* =========================================
+           SERVICES SECTION
+           ========================================= */
+        .services {
+            padding: 100px 0;
+            background-color: var(--bg-body);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 40px 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background-color: rgba(0, 82, 204, 0.1);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 24px;
+        }
+        [data-theme="dark"] .service-icon { background-color: rgba(76, 154, 255, 0.15); }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           QUOTE / CONTACT SECTION
+           ========================================= */
+        .quote-section {
+            padding: 100px 0;
+            background-color: var(--bg-surface);
+            transition: var(--transition);
+        }
+
+        .quote-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .quote-info h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .quote-info p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+
+        .contact-highlight {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-highlight span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .contact-highlight a {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .quote-form {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .quote-form h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 24px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.15);
+        }
+        [data-theme="dark"] .form-group input:focus,
+        [data-theme="dark"] .form-group select:focus,
+        [data-theme="dark"] .form-group textarea:focus {
+            box-shadow: 0 0 0 3px rgba(76, 154, 255, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-privacy {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        .footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 60px 0 30px;
+            transition: var(--transition);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo { margin-bottom: 16px; }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 320px;
+        }
+
+        .footer h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links li { margin-bottom: 12px; }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        @media (max-width: 900px) {
+            .quote-wrapper { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--bg-card);
+                flex-direction: column;
+                padding: 24px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-hover);
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .nav-links.active { display: flex; }
+            
+            .hero h1 { font-size: 2.5rem; }
+            .hero { padding: 60px 0; }
+            .section-header h2 { font-size: 1.75rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .quote-form { padding: 24px; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <span class="logo-icon">🛡️</span>
-        <span class="logo-text">All Quality Insurance</span>
-      </div>
-      <nav class="nav">
-        <a href="#services">Ծառայություններ</a>
-        <a href="#why-us">Ինչու մենք</a>
-        <a href="#quote">Անվճար գնահատում</a>
-        <a href="tel:+18001234567" class="btn btn-primary">📞 (800) 123-4567</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                ALL QUALITY <span>INSURANCE</span>
+            </a>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#services">Services</a>
+                <a href="#quote">Get a Quote</a>
+                <a href="tel:18189686652" class="btn btn-primary">📞 1-(818) 968-6652</a>
+            </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <span class="badge">🏆 Ավելի քան 10 տարվա փորձ Կալիֆոռնիայում</span>
-        <h1>Workers' Compensation ապահովագրություն <span class="highlight">RCFE</span> և <span class="highlight">Home Care</span> գործակալությունների համար</h1>
-        <p class="hero-subtitle">Ստացեք շուկայի ամենացածր գները + <strong>ԱՆՎՃԱՐ ռիսկերի կառավարման ծառայություններ</strong>, որոնք սովորաբար արժենում են հազարավոր դոլարներ:</p>
-        <div class="hero-cta">
-          <a href="#quote" class="btn btn-primary btn-large">Ստանալ անվճար գնահատում</a>
-          <a href="#services" class="btn btn-outline btn-large">Իմանալ ավելին</a>
-        </div>
-        <div class="trust-badges">
-          <span>✅ CA Licensed</span>
-          <span>✅ A+ Rated Carriers</span>
-          <span>✅ 24/7 Support</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section id="services" class="services">
-    <div class="container">
-      <h2 class="section-title">Մեր ծառայությունները</h2>
-      <p class="section-subtitle">Մասնագիտացված ապահովագրական լուծումներ Կալիֆոռնիայի խնամքի հաստատությունների համար</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">⚖️</div>
-          <h3>Workers' Compensation</h3>
-          <p>Պարտադիր ապահովագրություն Կալիֆոռնիայի բոլոր RCFE և Home Care գործակալությունների համար՝ W2 աշխատակիցների համար:</p>
-          <ul>
-            <li>Pay-As-You-Go ճկուն վճարումներ</li>
-            <li>Ամենացածր գները շուկայում</li>
-            <li>Արագ claims կառավարում</li>
-          </ul>
-        </div>
-        <div class="service-card featured">
-          <div class="service-icon">🎁</div>
-          <h3>Անվճար Risk Management</h3>
-          <p>Մեր բոլոր հաճախորդները ստանում են ռիսկերի կառավարման ծառայություններ՝ առանց լրացուցիչ վճարի:</p>
-          <ul>
-            <li>Անվտանգության քաղաքականություն</li>
-            <li>Աշխատակիցների վերապատրաստում</li>
-            <li>OSHA համապատասխանություն</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🏢</div>
-          <h3>RCFE Liability</h3>
-          <p>General և Professional Liability ապահովագրություն ձեր հաստատության պաշտպանության համար:</p>
-          <ul>
-            <li>Ծածկույթ 6-15 մահճակալների համար</li>
-            <li>Multi-facility քաղաքականություն</li>
-            <li>Ակնթարթային Certificate of Insurance</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US SECTION -->
-  <section id="why-us" class="why-us">
-    <div class="container">
-      <h2 class="section-title">Ինչու ընտրել մեզ</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <div class="feature-number">01</div>
-          <h3>Նվազեցրեք ծախսերը</h3>
-          <p>Մեր յուրահատուկ ծրագիրը առաջարկում է ամենացածր գները Կալիֆոռնիայում՝ առանց որակից զիջումների:</p>
-        </div>
-        <div class="feature">
-          <div class="feature-number">02</div>
-          <h3>Անվճար Risk Management</h3>
-          <p>Ստացեք հազարավոր դոլար արժողությամբ ռիսկերի կառավարման ծառայություններ՝ միանգամայն անվճար:</p>
-        </div>
-        <div class="feature">
-          <div class="feature-number">03</div>
-          <h3>Փորձագիտական աջակցություն</h3>
-          <p>Ավելի քան 10 տարվա փորձ Կալիֆոռնիայի RCFE շուկայում: Մենք հասկանում ենք ձեր կարիքները:</p>
-        </div>
-        <div class="feature">
-          <div class="feature-number">04</div>
-          <h3>Արագ սպասարկում</h3>
-          <p>Ստացեք ձեր գնահատումը 24 ժամվա ընթացքում և ակտիվացրեք ապահովագրությունը առանց դժվարությունների:</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE FORM SECTION -->
-  <section id="quote" class="quote-section">
-    <div class="container">
-      <div class="quote-wrapper">
-        <div class="quote-info">
-          <h2>Ստացեք ձեր անվճար գնահատումը</h2>
-          <p>Լրացրեք ձևը, և մեր մասնագետը կկապվի ձեզ հետ 24 ժամվա ընթացքում՝ առաջարկելով շուկայի ամենամրցունակ գները:</p>
-          <div class="quote-benefits">
-            <div class="benefit-item">
-              <span class="check">✓</span>
-              <span>Անվճար և պարտավորեցնող չէ</span>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <!-- Moon Icon (hidden by default, shown via JS) -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             </div>
-            <div class="benefit-item">
-              <span class="check">✓</span>
-              <span>Պատասխան 24 ժամվա ընթացքում</span>
-            </div>
-            <div class="benefit-item">
-              <span class="check">✓</span>
-              <span>Անվճար Risk Management ծառայություն</span>
-            </div>
-            <div class="benefit-item">
-              <span class="check">✓</span>
-              <span>Ձեր տվյալները 100% գաղտնի են</span>
-            </div>
-          </div>
-          <div class="contact-direct">
-            <p>Կամ զանգահարեք մեզ անմիջապես՝</p>
-            <a href="tel:+18001234567" class="phone-number">📞 (800) 123-4567</a>
-          </div>
         </div>
+    </header>
 
-        <form class="quote-form" action="https://formspree.io/f/ՁԵՐ_ՈՒՆԻԿԱԼ_ԿՈԴԸ" method="POST">
-          <h3>Պահանջել մոտավոր գին</h3>
-          
-          <div class="form-group">
-            <label for="name">Անուն և Ազգանուն *</label>
-            <input type="text" id="name" name="name" required placeholder="Ջոն Դոու">
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Էլ. հասցե *</label>
-              <input type="email" id="email" name="email" required placeholder="john@example.com">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">First Class Insurance Services</div>
+            <h1>GET YOUR FIRST CLASS<br>INSURANCE SERVICES</h1>
+            <p>Exclusive insurance solutions for Care Facilities and RCFE Owners. Whether you are just shopping or a first timer, this is the best option.</p>
+            <div class="hero-buttons">
+                <a href="#quote" class="btn btn-primary" style="padding: 14px 28px; font-size: 1.05rem;">Get a Quote Today</a>
+                <a href="#services" class="btn btn-outline" style="padding: 14px 28px; font-size: 1.05rem;">Explore Services</a>
             </div>
-            <div class="form-group">
-              <label for="phone">Հեռախոսահամար *</label>
-              <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Insurance Products</h2>
+                <p>Specialized coverage designed specifically for the unique needs of care facilities and RCFE owners.</p>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="facility_type">Հաստատության տեսակը *</label>
-            <select id="facility_type" name="facility_type" required>
-              <option value="">-- Ընտրեք --</option>
-              <option value="rcfe_6">RCFE (մինչև 6 մահճակալ)</option>
-              <option value="rcfe_15">RCFE (7-15 մահճակալ)</option>
-              <option value="rcfe_16">RCFE (16+ մահճակալ)</option>
-              <option value="home_care">Non-Medical Home Care</option>
-              <option value="other">Այլ</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="employees">Աշխատակիցների մոտավոր քանակը</label>
-            <select id="employees" name="employees">
-              <option value="1-5">1-5</option>
-              <option value="6-15">6-15</option>
-              <option value="16-30">16-30</option>
-              <option value="30+">30+</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Լրացուցիչ մեկնաբանություն</label>
-            <textarea id="message" name="message" rows="3" placeholder="Ձեր հարցերը կամ մեկնաբանությունները..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-large btn-full">
-            Ստանալ անվճար գնահատում →
-          </button>
-
-          <p class="form-privacy">🔒 Ձեր տվյալները 100% գաղտնի են և չեն փոխանցվի երրորդ կողմին:</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="logo">
-            <span class="logo-icon">🛡️</span>
-            <span class="logo-text">All Quality Insurance</span>
-          </div>
-          <p>Ձեր վստահելի գործընկերը Կալիֆոռնիայի RCFE և Home Care ապահովագրության ոլորտում:</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👷</div>
+                    <h3>Workers Compensation</h3>
+                    <p>Exclusive for Care Facilities with the lowest rates on the market. Whether you are just shopping or a first timer, this is the best option.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>RCFE Liability</h3>
+                    <p>Get a General & Professional Liability Insurance quote. Bind and get a Certificate of Insurance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Commercial Property</h3>
+                    <p>Many RCFE Owners don’t realize their home must be protected by commercial property insurance. Get a quote today.</p>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Ծառայություններ</h4>
-          <ul>
-            <li><a href="#services">Workers' Compensation</a></li>
-            <li><a href="#services">RCFE Liability</a></li>
-            <li><a href="#services">Risk Management</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Կապ</h4>
-          <ul>
-            <li>📞 (800) 123-4567</li>
-            <li>✉️ info@allqualityinsurance.com</li>
-            <li>📍 California, USA</li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Իրավական</h4>
-          <p>CA Insurance License #XXXXXXX</p>
-          <p>© 2026 All Quality Insurance Services. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
+    <!-- Quote / Contact Section -->
+    <section id="quote" class="quote-section">
+        <div class="container">
+            <div class="quote-wrapper">
+                <div class="quote-info">
+                    <h2>Ready to get covered?</h2>
+                    <p>Contact us today to get a quote tailored to your care facility. We provide the lowest rates on the market with first-class service.</p>
+                    
+                    <div class="contact-highlight">
+                        <span>Prefer to speak with an agent directly?</span>
+                        <a href="tel:18189686652">1-(818) 968-6652</a>
+                    </div>
+                </div>
+
+                <!-- Formspree Integration -->
+                <form class="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <h3>Request a Quote</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(818) 000-0000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Insurance Product Needed *</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- Select a Service --</option>
+                            <option value="Workers Compensation">Workers Compensation</option>
+                            <option value="RCFE Liability">RCFE Liability</option>
+                            <option value="Commercial Property">Commercial Property</option>
+                            <option value="Other">Other / Not Sure</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your facility or any specific questions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Submit Quote Request</button>
+                    
+                    <p class="form-privacy">🔒 Your information is secure and will only be used to provide your insurance quote.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        ALL QUALITY <span>INSURANCE</span>
+                    </div>
+                    <p>Providing first-class insurance services exclusively for Care Facilities and RCFE Owners with the lowest rates on the market.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Workers Compensation</a></li>
+                        <li><a href="#services">RCFE Liability</a></li>
+                        <li><a href="#services">Commercial Property</a></li>
+                        <li><a href="#quote">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>📞 <a href="tel:18189686652">1-(818) 968-6652</a></li>
+                        <li>📍 California, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 All Quality Insurance Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        const html = document.documentElement;
+
+        // Check localStorage or system preference
+        const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        html.setAttribute('data-theme', currentTheme);
+        updateIcons(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcons(newTheme);
+        });
+
+        function updateIcons(theme) {
+            if (theme === 'dark') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
-/* RESET & BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary: #0056b3;
-  --primary-dark: #003d82;
-  --accent: #28a745;
-  --accent-dark: #1e7e34;
-  --text: #1a1a1a;
-  --text-light: #555;
-  --bg: #ffffff;
-  --bg-light: #f8f9fa;
-  --border: #e0e0e0;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text);
-  line-height: 1.6;
-  background: var(--bg);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* HEADER */
-.header {
-  background: white;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.logo-icon {
-  font-size: 1.8rem;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav a:hover {
-  color: var(--primary);
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-  cursor: pointer;
-  border: none;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-.btn-outline:hover {
-  background: var(--primary);
-  color: white;
-}
-
-.btn-large {
-  padding: 16px 32px;
-  font-size: 1.1rem;
-}
-
-.btn-full {
-  width: 100%;
-}
-
-/* HERO */
-.hero {
-  background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
-  color: white;
-  padding: 100px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="1" fill="white" opacity="0.1"/></svg>');
-  opacity: 0.3;
-}
-
-.hero-content {
-  max-width: 800px;
-  position: relative;
-  z-index: 1;
-}
-
-.badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.15);
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-  backdrop-filter: blur(10px);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.highlight {
-  color: #ffd700;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  opacity: 0.95;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.hero-cta .btn-outline {
-  color: white;
-  border-color: white;
-}
-
-.hero-cta .btn-outline:hover {
-  background: white;
-  color: var(--primary);
-}
-
-.trust-badges {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-/* SECTIONS */
-section {
-  padding: 80px 0;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.section-subtitle {
-  text-align: center;
-  color: var(--text-light);
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-}
-
-/* SERVICES */
-.services {
-  background: var(--bg-light);
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.service-card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 2px solid transparent;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.service-card.featured {
-  border-color: var(--accent);
-  background: linear-gradient(135deg, #f0fff4 0%, #ffffff 100%);
-}
-
-.service-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.service-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--primary-dark);
-}
-
-.service-card ul {
-  list-style: none;
-  margin-top: 20px;
-}
-
-.service-card li {
-  padding: 8px 0;
-  padding-left: 25px;
-  position: relative;
-  color: var(--text-light);
-}
-
-.service-card li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: bold;
-}
-
-/* WHY US */
-.why-us {
-  background: white;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-}
-
-.feature {
-  text-align: center;
-}
-
-.feature-number {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--primary);
-  opacity: 0.2;
-  margin-bottom: 10px;
-}
-
-.feature h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.feature p {
-  color: var(--text-light);
-}
-
-/* QUOTE FORM */
-.quote-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-.quote-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.quote-info h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: var(--primary-dark);
-}
-
-.quote-info > p {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  margin-bottom: 30px;
-}
-
-.quote-benefits {
-  margin-bottom: 30px;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  font-size: 1.05rem;
-}
-
-.check {
-  background: var(--accent);
-  color: white;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.contact-direct {
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-}
-
-.phone-number {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary);
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-/* FORM */
-.quote-form {
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
-}
-
-.quote-form h3 {
-  font-size: 1.5rem;
-  margin-bottom: 25px;
-  color: var(--primary-dark);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 8px;
-  color: var(--text);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 2px solid var(--border);
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-.form-privacy {
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-light);
-  margin-top: 15px;
-}
-
-/* FOOTER */
-.footer {
-  background: #1a1a1a;
-  color: white;
-  padding: 60px 0 30px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer .logo {
-  color: white;
-  margin-bottom: 15px;
-}
-
-.footer-col p {
-  color: #aaa;
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-.footer-col h4 {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
-
-.footer-col ul {
-  list-style: none;
-}
-
-.footer-col li {
-  padding: 6px 0;
-  color: #aaa;
-  font-size: 0.95rem;
-}
-
-.footer-col a {
-  color: #aaa;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-col a:hover {
-  color: white;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .quote-wrapper {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-  }
-  
-  .hero {
-    padding: 60px 0;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .quote-form {
-    padding: 25px;
-  }
-}
