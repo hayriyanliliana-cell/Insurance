@@ -81,13 +81,13 @@
         ul { list-style: none; }
         
         .container {
-            max-width: 1280px;
+            max-width: 1200px; /* Matched to eCompNow's container width */
             margin: 0 auto;
             padding: 0 24px;
         }
 
         /* =========================================
-           HEADER - Centered Logo Layout
+           HEADER - Centered Logo Layout (Desktop)
            ========================================= */
         .header {
             background-color: rgba(255, 255, 255, 0.98);
@@ -176,21 +176,23 @@
         .header-phone:hover { background-color: var(--bg-soft); color: var(--primary); }
         .header-phone svg { width: 16px; height: 16px; stroke: var(--highlight); fill: none; stroke-width: 2; }
 
+        /* Button Styles - Matched to provided image */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            padding: 8px 16px;
-            border-radius: 50px; /* Pill shape like eCompNow */
+            gap: 8px;
+            padding: 12px 28px; /* Matched to image button padding */
+            border-radius: 50px; /* Pill shape like image */
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             border: none;
-            font-size: 0.85rem;
+            font-size: 0.95rem; /* Matched to image button font size */
             font-family: inherit;
             position: relative;
             overflow: hidden;
+            white-space: nowrap;
         }
 
         /* Shining Hover Effect */
@@ -230,10 +232,136 @@
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
 
         /* =========================================
+           MOBILE MENU OVERLAY (eCompNow Style)
+           ========================================= */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-body);
+            z-index: 2000;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-overlay.active {
+            transform: translateX(0);
+        }
+
+        .mobile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .mobile-logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .mobile-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 16px 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .mobile-nav-link:hover {
+            color: var(--highlight);
+            padding-left: 8px;
+        }
+
+        .mobile-actions {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mobile-actions .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            justify-content: center;
+        }
+
+        .mobile-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            padding: 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .mobile-phone:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .mobile-phone svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--highlight);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .mobile-theme-toggle {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            background: var(--bg-soft);
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .mobile-theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* =========================================
            HERO SECTION - Text Only (No Image)
            ========================================= */
         .hero {
-            padding: 80px 0 100px;
+            padding: 100px 0 120px; /* Matched to eCompNow hero padding */
             background: radial-gradient(circle at 50% 0%, rgba(37, 60, 109, 0.05) 0%, transparent 50%), var(--bg-body);
             text-align: center;
         }
@@ -244,7 +372,7 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3.5rem; /* Matched to eCompNow H1 size */
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -259,7 +387,7 @@
         }
         
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.25rem; /* Matched to eCompNow subtitle size */
             color: var(--text-muted);
             margin-bottom: 40px;
             max-width: 640px;
@@ -295,7 +423,7 @@
             border-radius: 50px;
         }
 
-        .why-us h2 { font-size: 2.75rem; font-weight: 900; color: var(--text-main); margin-bottom: 24px; letter-spacing: -0.02em; }
+        .why-us h2 { font-size: 2.75rem; /* Matched to eCompNow H2 size */ font-weight: 900; color: var(--text-main); margin-bottom: 24px; letter-spacing: -0.02em; }
         .why-us-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 56px; max-width: 640px; margin-left: auto; margin-right: auto; }
 
         .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; text-align: left; }
@@ -314,15 +442,41 @@
         .benefit-item p { font-size: 1rem; color: var(--text-main); font-weight: 500; line-height: 1.5; }
 
         /* =========================================
-           SERVICES SECTION
+           SERVICES SECTION - Mobile Carousel
            ========================================= */
         .services { padding: 100px 0; background-color: var(--bg-body); }
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
-        .section-header h2 { font-size: 2.5rem; font-weight: 900; color: var(--text-main); margin-bottom: 16px; }
+        .section-header h2 { font-size: 2.5rem; /* Matched to eCompNow H2 size */ font-weight: 900; color: var(--text-main); margin-bottom: 16px; }
         .section-header p { color: var(--text-muted); font-size: 1.05rem; }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 28px; 
+        }
         
+        /* Mobile Carousel Styles for Services */
+        @media (max-width: 768px) {
+            .services-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 16px;
+                padding-bottom: 20px;
+                margin: 0 -24px;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            
+            .service-card {
+                min-width: 280px;
+                max-width: 280px;
+                scroll-snap-align: start;
+                flex-shrink: 0;
+            }
+        }
+
         .service-card {
             background: var(--bg-card);
             padding: 40px 32px;
@@ -339,18 +493,50 @@
             color: var(--primary);
             border-radius: 16px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 2rem;
             margin-bottom: 24px;
+        }
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
         }
 
         .service-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px; }
         .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
 
         /* =========================================
-           REVIEWS SECTION
+           REVIEWS SECTION - Mobile Carousel
            ========================================= */
         .reviews { padding: 100px 0; background-color: var(--bg-soft); }
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        .reviews-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 28px; 
+        }
+
+        /* Mobile Carousel Styles for Reviews */
+        @media (max-width: 768px) {
+            .reviews-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 16px;
+                padding-bottom: 20px;
+                margin: 0 -24px;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            
+            .review-card {
+                min-width: 280px;
+                max-width: 280px;
+                scroll-snap-align: start;
+                flex-shrink: 0;
+            }
+        }
         
         .review-card {
             background: var(--bg-card);
@@ -427,7 +613,7 @@
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(37, 60, 109, 0.6);
             backdrop-filter: blur(8px);
-            z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
+            z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px;
             animation: fadeIn 0.3s ease;
         }
         .modal-overlay.active { display: flex; }
@@ -488,17 +674,23 @@
         /* =========================================
            RESPONSIVE DESIGN
            ========================================= */
+        @media (min-width: 1101px) {
+            .mobile-overlay { display: none !important; }
+        }
+
         @media (max-width: 1100px) {
             .nav-menu { display: none; }
             .header-phone { display: none; }
             .mobile-menu-btn { display: block; }
-            .nav-menu.mobile-active {
-                display: flex; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
-                background: var(--bg-body); flex-direction: column; padding: 32px 24px;
-                gap: 8px; align-items: stretch; z-index: 999; overflow-y: auto;
+            
+            /* Mobile Header Adjustment - Centered Logo */
+            .header { padding: 16px 0; }
+            .header-top { 
+                padding-bottom: 0; 
+                justify-content: center; /* Center logo on mobile */
             }
-            .nav-menu.mobile-active .nav-link { padding: 16px; font-size: 1.1rem; border-bottom: 1px solid var(--border); }
-            .nav-menu.mobile-active .btn { margin-top: 16px; width: 100%; }
+            .header-bottom { display: none; }
+            .logo img { height: 48px; }
         }
 
         @media (max-width: 900px) {
@@ -506,12 +698,6 @@
             .quote-wrapper { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .benefits-grid { grid-template-columns: 1fr; gap: 20px; }
-            
-            /* Mobile Header Adjustment */
-            .header { padding: 12px 0; }
-            .header-top { padding-bottom: 0; justify-content: flex-start; }
-            .header-bottom { display: none; }
-            .logo img { height: 40px; }
         }
 
         @media (max-width: 640px) {
@@ -526,7 +712,7 @@
 </head>
 <body>
 
-    <!-- HEADER - Centered Logo Layout -->
+    <!-- HEADER - Centered Logo Layout (Desktop) -->
     <header class="header">
         <div class="container">
             <!-- Top Row: Centered Logo -->
@@ -559,11 +745,51 @@
                         <svg class="sun-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                         <svg class="moon-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     </button>
-                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
                 </div>
             </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
     </header>
+
+    <!-- MOBILE OVERLAY MENU (eCompNow Style) -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="mobile-header">
+            <div class="mobile-logo">
+                <img src="https://cdn.shopify.com/s/files/1/0694/4053/6660/files/ChatGPT_Image_22_._2026_._20_34_13.png?v=1790094863" alt="All Quality Insurance Logo">
+            </div>
+            <button class="mobile-close" onclick="toggleMobileMenu()">✕</button>
+        </div>
+        
+        <nav class="mobile-nav">
+            <a href="#services" class="mobile-nav-link" onclick="toggleMobileMenu()">Insurance</a>
+            <a href="#quote" class="mobile-nav-link" onclick="toggleMobileMenu()">Service Center</a>
+            <a href="#reviews" class="mobile-nav-link" onclick="toggleMobileMenu()">Partners</a>
+            <a href="#why-us" class="mobile-nav-link" onclick="toggleMobileMenu()">Resources</a>
+            <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">Company</a>
+        </nav>
+
+        <div class="mobile-actions">
+            <a href="tel:18189686652" class="mobile-phone">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (818) 968-6652
+            </a>
+            <button class="btn btn-primary" onclick="openModal('quoteModal'); toggleMobileMenu();">
+                Get My Quotes
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button class="btn btn-outline" onclick="openModal('specialistModal'); toggleMobileMenu();">
+                Talk to a Specialist
+            </button>
+        </div>
+
+        <div class="mobile-theme-toggle" id="mobileThemeToggle">
+            <svg class="sun-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <span>Toggle Theme</span>
+        </div>
+    </div>
 
     <!-- HERO SECTION (Text Only, No Image) -->
     <section class="hero">
@@ -616,7 +842,7 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- SERVICES SECTION - Mobile Carousel -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
@@ -626,17 +852,23 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
                     <h3>Workers Compensation</h3>
                     <p>Exclusive for Care Facilities with the lowest rates on the market. Whether you are just shopping or a first timer, this is the best option.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏥</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
                     <h3>RCFE Liability</h3>
                     <p>Get a General & Professional Liability Insurance quote. Bind and get a Certificate of Insurance.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
                     <h3>Commercial Property</h3>
                     <p>Many RCFE Owners don't realize their home must be protected by commercial property insurance. Get a quote today.</p>
                 </div>
@@ -644,7 +876,7 @@
         </div>
     </section>
 
-    <!-- REVIEWS SECTION -->
+    <!-- REVIEWS SECTION - Mobile Carousel -->
     <section id="reviews" class="reviews">
         <div class="container">
             <div class="section-header">
@@ -870,17 +1102,14 @@
 
     <!-- SCRIPTS -->
     <script>
+        // Mobile Menu Toggle
         function toggleMobileMenu() {
-            const nav = document.getElementById('navMenu');
-            nav.classList.toggle('mobile-active');
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
         }
 
-        document.querySelectorAll('#navMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navMenu').classList.remove('mobile-active');
-            });
-        });
-
+        // Modal Functions
         function openModal(id) {
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -901,35 +1130,43 @@
             if (e.key === 'Escape') {
                 closeModal('quoteModal');
                 closeModal('specialistModal');
+                const overlay = document.getElementById('mobileOverlay');
+                if (overlay.classList.contains('active')) toggleMobileMenu();
             }
         });
 
+        // Dark/Light Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
-        const sunIcon = themeToggle.querySelector('.sun-icon');
-        const moonIcon = themeToggle.querySelector('.moon-icon');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const sunIcons = document.querySelectorAll('.sun-icon');
+        const moonIcons = document.querySelectorAll('.moon-icon');
         const html = document.documentElement;
 
         const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         html.setAttribute('data-theme', currentTheme);
         updateIcons(currentTheme);
 
-        themeToggle.addEventListener('click', () => {
+        function toggleTheme() {
             const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateIcons(newTheme);
-        });
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
 
         function updateIcons(theme) {
             if (theme === 'dark') {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
+                sunIcons.forEach(icon => icon.style.display = 'none');
+                moonIcons.forEach(icon => icon.style.display = 'block');
             } else {
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
+                sunIcons.forEach(icon => icon.style.display = 'block');
+                moonIcons.forEach(icon => icon.style.display = 'none');
             }
         }
 
+        // Form submission handler
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function(e) {
                 if (this.action.includes('YOUR_FORM_ID')) {
