@@ -304,10 +304,11 @@
             gap: 16px;
         }
 
+        /* Reduced button sizes in mobile menu */
         .mobile-actions .btn {
             width: 100%;
-            padding: 16px;
-            font-size: 1rem;
+            padding: 12px; /* Reduced padding */
+            font-size: 0.95rem; /* Reduced font size */
             justify-content: center;
         }
 
@@ -679,22 +680,22 @@
         .specialist-hours { font-size: 0.85rem; color: var(--text-light); display: flex; align-items: center; justify-content: center; gap: 6px; }
 
         /* =========================================
-           FOOTER - Always Dark Mode
+           FOOTER - Always Dark Mode with White Text
            ========================================= */
         .footer { 
             background-color: #0F172A; /* Always dark */
-            color: #F8FAFC; /* Always light text */
+            color: #FFFFFF; /* Always white text for maximum visibility */
             border-top: 1px solid #334155;
             padding: 60px 0 30px; 
         }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
         .footer-brand .logo { margin-bottom: 16px; }
-        .footer-brand p { color: #94A3B8; font-size: 0.9rem; line-height: 1.6; max-width: 320px; }
-        .footer h4 { font-size: 0.8rem; font-weight: 700; color: #F8FAFC; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.08em; }
+        .footer-brand p { color: #FFFFFF; font-size: 0.9rem; line-height: 1.6; max-width: 320px; } /* Changed to white */
+        .footer h4 { font-size: 0.8rem; font-weight: 700; color: #FFFFFF; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.08em; }
         .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: #94A3B8; font-size: 0.9rem; }
+        .footer-links a { color: #FFFFFF; font-size: 0.9rem; } /* Changed to white */
         .footer-links a:hover { color: var(--highlight); }
-        .footer-bottom { border-top: 1px solid #334155; padding-top: 24px; text-align: center; color: #64748B; font-size: 0.8rem; }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 24px; text-align: center; color: #FFFFFF; font-size: 0.8rem; } /* Changed to white */
 
         /* =========================================
            LOGO SPLASH ANIMATION (Desktop & Mobile)
@@ -857,9 +858,7 @@
                 Get My Quotes
                 <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </button>
-            <button class="btn btn-outline" onclick="openModal('specialistModal'); toggleMobileMenu();">
-                Talk to a Specialist
-            </button>
+            <!-- "Talk to a Specialist" button removed from mobile menu as requested -->
         </div>
 
         <div class="mobile-theme-toggle" id="mobileThemeToggle">
@@ -1064,7 +1063,7 @@
                         <textarea id="message" name="message" rows="4" placeholder="Tell us about your facility or any specific questions..."></textarea>
                     </div>
 
-                    <!-- Reduced Button Size to match other buttons -->
+                    <!-- Submit Button Size Matched to Other Buttons (Desktop) -->
                     <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px 24px; font-size: 0.9rem;">
                         Submit Quote Request
                         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1076,7 +1075,7 @@
         </div>
     </section>
 
-    <!-- FOOTER - Always Dark Mode -->
+    <!-- FOOTER - Always Dark Mode with White Text -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
