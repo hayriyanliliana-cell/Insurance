@@ -13,37 +13,37 @@
 
     <style>
         /* =========================================
-           CSS VARIABLES (LIGHT & DARK MODE)
+           CSS VARIABLES (eCompNow Inspired Palette)
            ========================================= */
         :root {
-            --primary: #0052cc;
-            --primary-hover: #003d99;
-            --accent: #00875a;
-            --bg-body: #ffffff;
-            --bg-surface: #f4f5f7;
-            --bg-card: #ffffff;
-            --text-main: #172b4d;
-            --text-muted: #5e6c84;
-            --border: #dfe1e6;
-            --shadow: 0 4px 12px rgba(9, 30, 66, 0.08);
-            --shadow-hover: 0 8px 24px rgba(9, 30, 66, 0.12);
-            --header-bg: rgba(255, 255, 255, 0.95);
-            --transition: all 0.3s ease;
+            --primary: #0052CC;       /* eCompNow Vibrant Blue */
+            --primary-hover: #003D99;
+            --accent: #059669;        /* Success/Savings Green */
+            --bg-body: #F9FAFB;       /* Crisp Light Gray */
+            --bg-surface: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --text-main: #111827;     /* Deep Charcoal */
+            --text-muted: #6B7280;
+            --border: #E5E7EB;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            --header-bg: rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
-            --primary: #4c9aff;
-            --primary-hover: #80bfff;
-            --accent: #36b37e;
-            --bg-body: #0d1117;
-            --bg-surface: #161b22;
-            --bg-card: #21262d;
-            --text-main: #f0f6fc;
-            --text-muted: #8b949e;
-            --border: #30363d;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5);
-            --header-bg: rgba(13, 17, 23, 0.95);
+            --primary: #3B82F6;
+            --primary-hover: #60A5FA;
+            --accent: #10B981;
+            --bg-body: #0F172A;       /* Deep Slate */
+            --bg-surface: #1E293B;
+            --bg-card: #1E293B;
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --border: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            --header-bg: rgba(15, 23, 42, 0.9);
         }
 
         /* =========================================
@@ -64,7 +64,7 @@
         ul { list-style: none; }
         
         .container {
-            max-width: 1140px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -74,7 +74,7 @@
            ========================================= */
         .header {
             background-color: var(--header-bg);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -86,16 +86,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 72px;
+            height: 76px;
         }
 
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--text-main);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             letter-spacing: -0.02em;
         }
 
@@ -119,8 +119,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 12px 24px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
@@ -131,18 +131,19 @@
 
         .btn-primary {
             background-color: var(--primary);
-            color: #ffffff;
+            color: #FFFFFF;
         }
-        [data-theme="dark"] .btn-primary { color: #0d1117; }
+        [data-theme="dark"] .btn-primary { color: #0F172A; font-weight: 700; }
 
         .btn-primary:hover {
             background-color: var(--primary-hover);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         .btn-outline {
             background: transparent;
-            border: 1px solid var(--border);
+            border: 1.5px solid var(--border);
             color: var(--text-main);
         }
 
@@ -151,13 +152,12 @@
             color: var(--primary);
         }
 
-        /* Theme Toggle Button */
         .theme-toggle {
             background: transparent;
-            border: 1px solid var(--border);
+            border: 1.5px solid var(--border);
             color: var(--text-main);
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -165,8 +165,8 @@
             cursor: pointer;
             transition: var(--transition);
         }
-        .theme-toggle:hover { background-color: var(--bg-surface); }
-        .theme-toggle svg { width: 20px; height: 20px; fill: currentColor; }
+        .theme-toggle:hover { background-color: var(--bg-surface); border-color: var(--primary); }
+        .theme-toggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
 
         .mobile-menu-btn {
             display: none;
@@ -181,16 +181,21 @@
            HERO SECTION
            ========================================= */
         .hero {
-            padding: 100px 0 80px;
-            background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-body) 100%);
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 100% 0%, rgba(0, 82, 204, 0.08) 0%, transparent 50%), var(--bg-body);
             text-align: center;
+        }
+        [data-theme="dark"] .hero {
+            background: radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), var(--bg-body);
         }
 
         .hero-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background-color: rgba(0, 82, 204, 0.1);
             color: var(--primary);
-            padding: 6px 16px;
+            padding: 8px 16px;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -198,10 +203,10 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
-        [data-theme="dark"] .hero-badge { background-color: rgba(76, 154, 255, 0.15); }
+        [data-theme="dark"] .hero-badge { background-color: rgba(59, 130, 246, 0.15); color: #60A5FA; }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.75rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -226,6 +231,84 @@
         }
 
         /* =========================================
+           WHY CHOOSE US SECTION
+           ========================================= */
+        .why-us {
+            padding: 100px 0;
+            background-color: var(--bg-surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .why-us-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .why-us-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .why-us-header .highlight-text {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .why-us-header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(5, 150, 105, 0.1);
+            color: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        [data-theme="dark"] .benefit-icon { background-color: rgba(16, 185, 129, 0.15); }
+        .benefit-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+        .benefit-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* =========================================
            SERVICES SECTION
            ========================================= */
         .services {
@@ -240,8 +323,8 @@
         }
 
         .section-header h2 {
-            font-size: 2.25rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--text-main);
             margin-bottom: 16px;
             letter-spacing: -0.02em;
@@ -254,14 +337,14 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
         }
 
         .service-card {
             background: var(--bg-card);
             padding: 40px 32px;
-            border-radius: 12px;
+            border-radius: 16px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -285,10 +368,10 @@
             font-size: 1.75rem;
             margin-bottom: 24px;
         }
-        [data-theme="dark"] .service-icon { background-color: rgba(76, 154, 255, 0.15); }
+        [data-theme="dark"] .service-icon { background-color: rgba(59, 130, 246, 0.15); }
 
         .service-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 12px;
@@ -301,12 +384,79 @@
         }
 
         /* =========================================
+           REVIEWS SECTION
+           ========================================= */
+        .reviews {
+            padding: 100px 0;
+            background-color: var(--bg-surface);
+            border-top: 1px solid var(--border);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .stars {
+            color: #F59E0B;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: var(--text-main);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .reviewer-details h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .reviewer-details span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* =========================================
            QUOTE / CONTACT SECTION
            ========================================= */
         .quote-section {
             padding: 100px 0;
-            background-color: var(--bg-surface);
-            transition: var(--transition);
+            background-color: var(--bg-body);
         }
 
         .quote-wrapper {
@@ -317,8 +467,8 @@
         }
 
         .quote-info h2 {
-            font-size: 2.25rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--text-main);
             margin-bottom: 20px;
             letter-spacing: -0.02em;
@@ -356,7 +506,7 @@
             background: var(--bg-card);
             padding: 40px;
             border-radius: 16px;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-hover);
             border: 1px solid var(--border);
         }
 
@@ -381,9 +531,9 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 14px 16px;
             background-color: var(--bg-body);
-            border: 1px solid var(--border);
+            border: 1.5px solid var(--border);
             border-radius: 8px;
             font-size: 1rem;
             font-family: inherit;
@@ -396,12 +546,12 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.15);
+            box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.1);
         }
         [data-theme="dark"] .form-group input:focus,
         [data-theme="dark"] .form-group select:focus,
         [data-theme="dark"] .form-group textarea:focus {
-            box-shadow: 0 0 0 3px rgba(76, 154, 255, 0.2);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
         }
 
         .form-row {
@@ -428,7 +578,6 @@
             background-color: var(--bg-card);
             border-top: 1px solid var(--border);
             padding: 60px 0 30px;
-            transition: var(--transition);
         }
 
         .footer-grid {
@@ -448,7 +597,7 @@
         }
 
         .footer h4 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 20px;
@@ -479,6 +628,7 @@
         @media (max-width: 900px) {
             .quote-wrapper { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero h1 { font-size: 3rem; }
         }
 
         @media (max-width: 768px) {
@@ -487,7 +637,7 @@
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 72px;
+                top: 76px;
                 left: 0;
                 right: 0;
                 background: var(--bg-card);
@@ -501,9 +651,9 @@
             
             .nav-links.active { display: flex; }
             
-            .hero h1 { font-size: 2.5rem; }
-            .hero { padding: 60px 0; }
-            .section-header h2 { font-size: 1.75rem; }
+            .hero h1 { font-size: 2.25rem; }
+            .hero { padding: 80px 0 60px; }
+            .section-header h2, .why-us-header h2 { font-size: 2rem; }
             .form-row { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .quote-form { padding: 24px; }
@@ -521,17 +671,17 @@
             </a>
             
             <nav class="nav-links" id="navLinks">
+                <a href="#why-us">Why Us</a>
                 <a href="#services">Services</a>
+                <a href="#reviews">Reviews</a>
                 <a href="#quote">Get a Quote</a>
                 <a href="tel:18189686652" class="btn btn-primary">📞 1-(818) 968-6652</a>
             </nav>
 
             <div style="display: flex; gap: 12px; align-items: center;">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <!-- Sun Icon -->
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                    <!-- Moon Icon (hidden by default, shown via JS) -->
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
                 <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             </div>
@@ -541,12 +691,49 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">First Class Insurance Services</div>
+            <div class="hero-badge">✨ First Class Insurance Services</div>
             <h1>GET YOUR FIRST CLASS<br>INSURANCE SERVICES</h1>
             <p>Exclusive insurance solutions for Care Facilities and RCFE Owners. Whether you are just shopping or a first timer, this is the best option.</p>
             <div class="hero-buttons">
-                <a href="#quote" class="btn btn-primary" style="padding: 14px 28px; font-size: 1.05rem;">Get a Quote Today</a>
-                <a href="#services" class="btn btn-outline" style="padding: 14px 28px; font-size: 1.05rem;">Explore Services</a>
+                <a href="#quote" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.05rem;">Get a Quote Today</a>
+                <a href="#services" class="btn btn-outline" style="padding: 16px 32px; font-size: 1.05rem;">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section (Adapted from your text) -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="why-us-header">
+                <h2>Why All Quality Insurance?</h2>
+                <p class="highlight-text">Save Time, Save Money.</p>
+                <p style="margin-top: 16px;">We've turned buying business insurance into a fast, simple experience, shopping top carriers to land you the right coverage at the best price.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Minimize your insurance costs without compromising coverages</h3>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Mitigate insurance claims through loss control and safety</h3>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Reduce your experience modification through claims management</h3>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Reduce your audit exposure</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -573,6 +760,51 @@
                     <div class="service-icon">🏠</div>
                     <h3>Commercial Property</h3>
                     <p>Many RCFE Owners don’t realize their home must be protected by commercial property insurance. Get a quote today.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Trusted by care facility owners across California for our exceptional service and unmatched rates.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"All Quality Insurance made getting our Workers' Comp incredibly easy. They found us the lowest rates on the market, and their free risk management services have been a game-changer for our facility."</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">SM</div>
+                        <div class="reviewer-details">
+                            <h4>Sarah M.</h4>
+                            <span>RCFE Owner, Los Angeles, CA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"I was worried about the complexity of RCFE Liability insurance, but their team guided me through every step. We got bound quickly and received our Certificate of Insurance the same day. Highly recommended!"</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">DL</div>
+                        <div class="reviewer-details">
+                            <h4>David L.</h4>
+                            <span>Home Care Agency Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Professional, responsive, and truly knowledgeable about the care facility industry. They helped us reduce our audit exposure and saved us a significant amount of money on our commercial property policy."</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">JR</div>
+                        <div class="reviewer-details">
+                            <h4>Jennifer R.</h4>
+                            <span>Multi-Facility Operator, CA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -628,7 +860,7 @@
                         <textarea id="message" name="message" rows="4" placeholder="Tell us about your facility or any specific questions..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Submit Quote Request</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.05rem;">Submit Quote Request</button>
                     
                     <p class="form-privacy">🔒 Your information is secure and will only be used to provide your insurance quote.</p>
                 </form>
@@ -650,9 +882,9 @@
                 <div>
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#services">Workers Compensation</a></li>
-                        <li><a href="#services">RCFE Liability</a></li>
-                        <li><a href="#services">Commercial Property</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#reviews">Client Reviews</a></li>
                         <li><a href="#quote">Get a Quote</a></li>
                     </ul>
                 </div>
