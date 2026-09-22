@@ -405,7 +405,7 @@
         .hero-buttons .btn { padding: 14px 28px; font-size: 1rem; }
 
         /* =========================================
-           SHINING LABELS
+           PERMANENT SHINING LABELS
            ========================================= */
         .section-label {
             display: inline-block;
@@ -423,17 +423,18 @@
             cursor: default;
         }
 
-        /* Shining effect for labels */
+        /* Permanent shining effect for labels (no hover required) */
         .section-label::before {
             content: '';
             position: absolute;
             top: 0; left: -100%; width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-            transition: left 0.6s ease;
+            animation: shineLabel 2.5s infinite;
         }
 
-        .section-label:hover::before {
-            left: 100%;
+        @keyframes shineLabel {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
         }
 
         /* =========================================
@@ -696,7 +697,7 @@
         .footer-bottom { border-top: 1px solid #334155; padding-top: 24px; text-align: center; color: #64748B; font-size: 0.8rem; }
 
         /* =========================================
-           LOGO SPLASH ANIMATION (Desktop Only)
+           LOGO SPLASH ANIMATION (Desktop & Mobile)
            ========================================= */
         .logo-splash {
             position: fixed;
@@ -727,11 +728,6 @@
         .logo-splash.hidden img {
             height: 72px; /* Shrinks to header logo size */
             transform: translateY(-50vh); /* Moves up to header position */
-        }
-
-        /* Hide splash on mobile */
-        @media (max-width: 1100px) {
-            .logo-splash { display: none !important; }
         }
 
         /* =========================================
@@ -775,7 +771,7 @@
 </head>
 <body>
 
-    <!-- LOGO SPLASH SCREEN (Desktop Only) -->
+    <!-- LOGO SPLASH SCREEN (Desktop & Mobile) -->
     <div class="logo-splash" id="logoSplash">
         <img src="https://cdn.shopify.com/s/files/1/0694/4053/6660/files/ChatGPT_Image_22_._2026_._20_34_13.png?v=1790094863" alt="All Quality Insurance Logo">
     </div>
@@ -1202,10 +1198,10 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Logo Splash Animation (Desktop Only)
+        // Logo Splash Animation (Desktop & Mobile)
         window.addEventListener('load', () => {
             const splash = document.getElementById('logoSplash');
-            if (splash && window.innerWidth > 1100) {
+            if (splash) {
                 setTimeout(() => {
                     splash.classList.add('hidden');
                 }, 800); // Show splash for 0.8 seconds
