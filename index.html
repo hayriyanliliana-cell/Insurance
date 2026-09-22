@@ -3,47 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Quality Insurance Services | First Class Insurance for Care Facilities</title>
+    <title>All Quality Insurance Services | Workers' Comp & Business Insurance in Minutes</title>
     <meta name="description" content="All Quality Insurance Services offers Workers Compensation, RCFE Liability, and Commercial Property insurance exclusively for care facilities.">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         /* =========================================
-           CSS VARIABLES (eCompNow Inspired Palette)
+           CSS VARIABLES - eCompNow Color Palette
            ========================================= */
         :root {
-            --primary: #0052CC;       /* eCompNow Vibrant Blue */
-            --primary-hover: #003D99;
-            --accent: #059669;        /* Success/Savings Green */
-            --bg-body: #F9FAFB;       /* Crisp Light Gray */
-            --bg-surface: #FFFFFF;
+            --gold: #E8A838;
+            --gold-dark: #D4941F;
+            --gold-light: #F4C76B;
+            --gold-glow: rgba(232, 168, 56, 0.4);
+            --navy: #0F172A;
+            --navy-light: #1E293B;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --text-light: #64748B;
+            --bg-body: #FFFFFF;
+            --bg-soft: #FAFAFA;
             --bg-card: #FFFFFF;
-            --text-main: #111827;     /* Deep Charcoal */
-            --text-muted: #6B7280;
-            --border: #E5E7EB;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-            --header-bg: rgba(255, 255, 255, 0.9);
+            --border: #E2E8F0;
+            --border-light: #F1F5F9;
+            --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+            --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+            --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.1);
+            --shadow-gold: 0 8px 24px rgba(232, 168, 56, 0.35);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
-            --primary: #3B82F6;
-            --primary-hover: #60A5FA;
-            --accent: #10B981;
-            --bg-body: #0F172A;       /* Deep Slate */
-            --bg-surface: #1E293B;
+            --gold: #F4C76B;
+            --gold-dark: #E8A838;
+            --gold-light: #FDE68A;
+            --gold-glow: rgba(244, 199, 107, 0.3);
+            --navy: #F8FAFC;
+            --navy-light: #E2E8F0;
+            --text-main: #F8FAFC;
+            --text-muted: #CBD5E1;
+            --text-light: #94A3B8;
+            --bg-body: #0B1120;
+            --bg-soft: #111827;
             --bg-card: #1E293B;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
             --border: #334155;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-            --header-bg: rgba(15, 23, 42, 0.9);
+            --border-light: #1E293B;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
         }
 
         /* =========================================
@@ -53,28 +63,29 @@
         html { scroll-behavior: smooth; }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
-            transition: var(--transition);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
         
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         /* =========================================
-           HEADER & NAVIGATION
+           HEADER - eCompNow Style
            ========================================= */
         .header {
-            background-color: var(--header-bg);
-            backdrop-filter: blur(12px);
+            background-color: var(--bg-body);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -82,63 +93,173 @@
             transition: var(--transition);
         }
 
-        .header .container {
+        .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 76px;
+            height: 80px;
+            gap: 24px;
         }
 
         .logo {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--text-main);
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-main);
             letter-spacing: -0.02em;
+            flex-shrink: 0;
         }
 
-        .logo span { color: var(--primary); }
-
-        .nav-links {
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 10px;
             display: flex;
-            gap: 32px;
             align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px var(--gold-glow);
         }
 
-        .nav-links a {
-            font-weight: 500;
-            color: var(--text-muted);
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .brand {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--navy);
+        }
+        [data-theme="dark"] .logo-text .brand { color: var(--text-main); }
+
+        .logo-text .sub {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--gold-dark);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 10px 14px;
             font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+            border-radius: 6px;
+            transition: var(--transition);
         }
 
-        .nav-links a:hover { color: var(--primary); }
+        .nav-link:hover {
+            background-color: var(--bg-soft);
+            color: var(--gold-dark);
+        }
+        [data-theme="dark"] .nav-link:hover { background-color: var(--bg-card); }
+
+        .nav-link svg {
+            width: 12px;
+            height: 12px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .header-phone:hover {
+            background-color: var(--bg-soft);
+        }
+
+        .header-phone svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--gold-dark);
+            fill: none;
+            stroke-width: 2;
+        }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             border: none;
             font-size: 0.95rem;
-            gap: 8px;
+            font-family: inherit;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-primary {
-            background-color: var(--primary);
-            color: #FFFFFF;
+        .btn svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+            flex-shrink: 0;
         }
-        [data-theme="dark"] .btn-primary { color: #0F172A; font-weight: 700; }
 
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
+        /* Shining Effect for Buttons */
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                transparent 100%
+            );
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn-outline {
@@ -148,25 +269,46 @@
         }
 
         .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
+            border-color: var(--gold);
+            color: var(--gold-dark);
+            background-color: rgba(232, 168, 56, 0.05);
         }
 
-        .theme-toggle {
-            background: transparent;
-            border: 1.5px solid var(--border);
-            color: var(--text-main);
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px var(--gold-glow);
         }
-        .theme-toggle:hover { background-color: var(--bg-surface); border-color: var(--primary); }
-        .theme-toggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--gold-glow);
+        }
+
+        .btn-gold::before {
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.5) 50%,
+                transparent 100%
+            );
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            padding: 10px;
+        }
+
+        .btn-ghost:hover {
+            background-color: var(--bg-soft);
+        }
+
+        .btn-ghost svg {
+            width: 20px;
+            height: 20px;
+        }
 
         .mobile-menu-btn {
             display: none;
@@ -175,52 +317,97 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text-main);
+            padding: 8px;
         }
 
         /* =========================================
-           HERO SECTION
+           HERO SECTION - eCompNow Style
            ========================================= */
         .hero {
-            padding: 120px 0 100px;
-            background: radial-gradient(circle at 100% 0%, rgba(0, 82, 204, 0.08) 0%, transparent 50%), var(--bg-body);
+            padding: 100px 0 120px;
+            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-body) 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        [data-theme="dark"] .hero {
-            background: radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), var(--bg-body);
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: rgba(0, 82, 204, 0.1);
-            color: var(--primary);
-            padding: 8px 16px;
+            display: inline-block;
+            background-color: rgba(232, 168, 56, 0.12);
+            color: var(--gold-dark);
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
+            border: 1px solid rgba(232, 168, 56, 0.2);
         }
-        [data-theme="dark"] .hero-badge { background-color: rgba(59, 130, 246, 0.15); color: #60A5FA; }
+        [data-theme="dark"] .hero-badge {
+            background-color: rgba(244, 199, 107, 0.1);
+            color: var(--gold-light);
+            border-color: rgba(244, 199, 107, 0.2);
+        }
 
         .hero h1 {
-            font-size: 3.75rem;
-            font-weight: 800;
-            line-height: 1.1;
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.05;
             margin-bottom: 24px;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.04em;
             color: var(--text-main);
+        }
+
+        .hero h1 .highlight {
+            color: var(--gold-dark);
+            position: relative;
+            display: inline-block;
+        }
+        [data-theme="dark"] .hero h1 .highlight { color: var(--gold); }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: var(--gold);
+            opacity: 0.2;
+            border-radius: 4px;
+            z-index: -1;
         }
 
         .hero p {
             font-size: 1.25rem;
             color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 680px;
+            margin-bottom: 48px;
+            max-width: 640px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
+            line-height: 1.6;
         }
 
         .hero-buttons {
@@ -228,84 +415,120 @@
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .hero-buttons .btn {
+            padding: 16px 32px;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .hero-ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .hero-ai-badge svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
         }
 
         /* =========================================
-           WHY CHOOSE US SECTION
+           WHY US SECTION - eCompNow Style (2nd screenshot)
            ========================================= */
         .why-us {
             padding: 100px 0;
-            background-color: var(--bg-surface);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            background-color: var(--bg-body);
         }
 
-        .why-us-header {
+        .why-us-inner {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px;
         }
 
-        .why-us-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .why-us-header .highlight-text {
-            color: var(--accent);
+        .why-us-label {
+            display: inline-block;
+            color: var(--gold-dark);
+            font-size: 0.85rem;
             font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        [data-theme="dark"] .why-us-label { color: var(--gold); }
+
+        .why-us h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
         }
 
-        .why-us-header p {
-            color: var(--text-muted);
+        .why-us-subtitle {
             font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 56px;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
             line-height: 1.7;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px 48px;
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .benefit-card {
-            background: var(--bg-card);
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            transition: var(--transition);
+        .benefit-item {
             display: flex;
-            flex-direction: column;
+            align-items: flex-start;
             gap: 16px;
         }
 
-        .benefit-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
-        }
-
-        .benefit-icon {
-            width: 48px;
-            height: 48px;
-            background-color: rgba(5, 150, 105, 0.1);
-            color: var(--accent);
-            border-radius: 12px;
+        .benefit-check {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background-color: rgba(232, 168, 56, 0.12);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 2px;
         }
-        [data-theme="dark"] .benefit-icon { background-color: rgba(16, 185, 129, 0.15); }
-        .benefit-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; }
+        [data-theme="dark"] .benefit-check {
+            background-color: rgba(244, 199, 107, 0.15);
+        }
 
-        .benefit-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
+        .benefit-check svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--gold-dark);
+            fill: none;
+            stroke-width: 3;
+        }
+        [data-theme="dark"] .benefit-check svg { stroke: var(--gold); }
+
+        .benefit-item p {
+            font-size: 1.05rem;
             color: var(--text-main);
-            line-height: 1.4;
+            font-weight: 500;
+            line-height: 1.5;
         }
 
         /* =========================================
@@ -313,32 +536,45 @@
            ========================================= */
         .services {
             padding: 100px 0;
-            background-color: var(--bg-body);
+            background-color: var(--bg-soft);
         }
 
         .section-header {
             text-align: center;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 60px;
         }
 
+        .section-label {
+            display: inline-block;
+            color: var(--gold-dark);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        [data-theme="dark"] .section-label { color: var(--gold); }
+
         .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2.75rem;
+            font-weight: 900;
             color: var(--text-main);
             margin-bottom: 16px;
             letter-spacing: -0.02em;
+            line-height: 1.15;
         }
 
         .section-header p {
             color: var(--text-muted);
             font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
+            gap: 28px;
         }
 
         .service-card {
@@ -346,21 +582,20 @@
             padding: 40px 32px;
             border-radius: 16px;
             border: 1px solid var(--border);
-            box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
         }
 
         .service-icon {
             width: 56px;
             height: 56px;
-            background-color: rgba(0, 82, 204, 0.1);
-            color: var(--primary);
+            background: linear-gradient(135deg, rgba(232, 168, 56, 0.15) 0%, rgba(232, 168, 56, 0.05) 100%);
+            color: var(--gold-dark);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -368,7 +603,10 @@
             font-size: 1.75rem;
             margin-bottom: 24px;
         }
-        [data-theme="dark"] .service-icon { background-color: rgba(59, 130, 246, 0.15); }
+        [data-theme="dark"] .service-icon {
+            background: linear-gradient(135deg, rgba(244, 199, 107, 0.15) 0%, rgba(244, 199, 107, 0.05) 100%);
+            color: var(--gold);
+        }
 
         .service-card h3 {
             font-size: 1.35rem;
@@ -380,7 +618,7 @@
         .service-card p {
             color: var(--text-muted);
             font-size: 1rem;
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         /* =========================================
@@ -388,14 +626,13 @@
            ========================================= */
         .reviews {
             padding: 100px 0;
-            background-color: var(--bg-surface);
-            border-top: 1px solid var(--border);
+            background-color: var(--bg-body);
         }
 
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
+            gap: 28px;
         }
 
         .review-card {
@@ -403,15 +640,20 @@
             padding: 32px;
             border-radius: 16px;
             border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
             box-shadow: var(--shadow);
         }
 
         .stars {
-            color: #F59E0B;
-            font-size: 1.2rem;
+            color: var(--gold-dark);
+            font-size: 1.15rem;
             margin-bottom: 16px;
             letter-spacing: 2px;
         }
+        [data-theme="dark"] .stars { color: var(--gold); }
 
         .review-text {
             color: var(--text-main);
@@ -425,30 +667,33 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
         }
 
         .reviewer-avatar {
             width: 48px;
             height: 48px;
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .reviewer-details h4 {
             font-size: 1rem;
             font-weight: 700;
             color: var(--text-main);
+            margin-bottom: 2px;
         }
 
         .reviewer-details span {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--text-light);
         }
 
         /* =========================================
@@ -456,7 +701,7 @@
            ========================================= */
         .quote-section {
             padding: 100px 0;
-            background-color: var(--bg-body);
+            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-body) 100%);
         }
 
         .quote-wrapper {
@@ -467,23 +712,25 @@
         }
 
         .quote-info h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2.75rem;
+            font-weight: 900;
             color: var(--text-main);
             margin-bottom: 20px;
             letter-spacing: -0.02em;
+            line-height: 1.15;
         }
 
         .quote-info p {
             color: var(--text-muted);
             font-size: 1.1rem;
             margin-bottom: 32px;
+            line-height: 1.7;
         }
 
         .contact-highlight {
             background: var(--bg-card);
-            padding: 24px;
-            border-radius: 12px;
+            padding: 28px;
+            border-radius: 16px;
             border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
@@ -492,21 +739,22 @@
 
         .contact-highlight span {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color: var(--text-light);
             font-weight: 500;
         }
 
         .contact-highlight a {
             font-size: 1.75rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--gold-dark);
         }
+        [data-theme="dark"] .contact-highlight a { color: var(--gold); }
 
         .quote-form {
             background: var(--bg-card);
             padding: 40px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-hover);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
         }
 
@@ -534,7 +782,7 @@
             padding: 14px 16px;
             background-color: var(--bg-body);
             border: 1.5px solid var(--border);
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
             font-family: inherit;
             color: var(--text-main);
@@ -545,13 +793,8 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.1);
-        }
-        [data-theme="dark"] .form-group input:focus,
-        [data-theme="dark"] .form-group select:focus,
-        [data-theme="dark"] .form-group textarea:focus {
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px var(--gold-glow);
         }
 
         .form-row {
@@ -563,12 +806,200 @@
         .form-privacy {
             text-align: center;
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: var(--text-light);
             margin-top: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
+        }
+
+        /* =========================================
+           MODALS
+           ========================================= */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border-radius: 20px;
+            max-width: 560px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            animation: slideUp 0.3s ease;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 28px 32px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .modal-header p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .modal-close {
+            background: var(--bg-soft);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .modal-close:hover {
+            background: var(--border);
+            color: var(--text-main);
+        }
+
+        .modal-close svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+        }
+
+        .modal-body {
+            padding: 28px 32px 32px;
+        }
+
+        /* Specialist Modal */
+        .specialist-content {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .specialist-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 24px var(--gold-glow);
+        }
+
+        .specialist-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .specialist-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .specialist-content > p {
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            font-size: 1rem;
+        }
+
+        .specialist-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-soft);
+            padding: 20px 32px;
+            border-radius: 16px;
+            border: 2px solid var(--gold);
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .specialist-phone:hover {
+            background: rgba(232, 168, 56, 0.08);
+            transform: scale(1.02);
+        }
+
+        .specialist-phone svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold-dark);
+            fill: none;
+            stroke-width: 2;
+        }
+        [data-theme="dark"] .specialist-phone svg { stroke: var(--gold); }
+
+        .specialist-phone a {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .specialist-hours {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .specialist-hours svg {
+            width: 14px;
+            height: 14px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
         }
 
         /* =========================================
@@ -597,12 +1028,12 @@
         }
 
         .footer h4 {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
         }
 
         .footer-links li { margin-bottom: 12px; }
@@ -612,138 +1043,227 @@
             font-size: 0.95rem;
         }
 
-        .footer-links a:hover { color: var(--primary); }
+        .footer-links a:hover { color: var(--gold-dark); }
+        [data-theme="dark"] .footer-links a:hover { color: var(--gold); }
 
         .footer-bottom {
             border-top: 1px solid var(--border);
             padding-top: 24px;
             text-align: center;
-            color: var(--text-muted);
+            color: var(--text-light);
             font-size: 0.85rem;
         }
 
         /* =========================================
            RESPONSIVE DESIGN
            ========================================= */
+        @media (max-width: 1100px) {
+            .nav-menu { display: none; }
+            .header-phone { display: none; }
+            .mobile-menu-btn { display: block; }
+            
+            .nav-menu.mobile-active {
+                display: flex;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--bg-body);
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 8px;
+                align-items: stretch;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.mobile-active .nav-link {
+                padding: 16px;
+                font-size: 1.1rem;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .nav-menu.mobile-active .btn {
+                margin-top: 16px;
+                width: 100%;
+            }
+        }
+
         @media (max-width: 900px) {
             .quote-wrapper { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .hero h1 { font-size: 3rem; }
+            .why-us h2 { font-size: 2.5rem; }
+            .benefits-grid { grid-template-columns: 1fr; gap: 20px; }
         }
 
-        @media (max-width: 768px) {
-            .mobile-menu-btn { display: block; }
-            
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 76px;
-                left: 0;
-                right: 0;
-                background: var(--bg-card);
-                flex-direction: column;
-                padding: 24px;
-                border-bottom: 1px solid var(--border);
-                box-shadow: var(--shadow-hover);
-                gap: 20px;
-                align-items: flex-start;
-            }
-            
-            .nav-links.active { display: flex; }
-            
+        @media (max-width: 640px) {
+            .hero { padding: 60px 0 80px; }
             .hero h1 { font-size: 2.25rem; }
-            .hero { padding: 80px 0 60px; }
-            .section-header h2, .why-us-header h2 { font-size: 2rem; }
+            .hero p { font-size: 1.05rem; }
+            .hero-buttons .btn { width: 100%; }
+            .section-header h2 { font-size: 2rem; }
+            .why-us h2 { font-size: 2rem; }
+            .why-us, .services, .reviews, .quote-section { padding: 70px 0; }
             .form-row { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .quote-form { padding: 24px; }
+            .modal-header, .modal-body { padding-left: 24px; padding-right: 24px; }
+            .specialist-phone a { font-size: 1.4rem; }
+            .specialist-phone { padding: 16px 24px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- HEADER - eCompNow Style -->
     <header class="header">
-        <div class="container">
+        <div class="container header-inner">
             <a href="#" class="logo">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                ALL QUALITY <span>INSURANCE</span>
+                <div class="logo-icon">🛡️</div>
+                <div class="logo-text">
+                    <span class="brand">ALL QUALITY</span>
+                    <span class="sub">Insurance Services</span>
+                </div>
             </a>
             
-            <nav class="nav-links" id="navLinks">
-                <a href="#why-us">Why Us</a>
-                <a href="#services">Services</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#quote">Get a Quote</a>
-                <a href="tel:18189686652" class="btn btn-primary">📞 1-(818) 968-6652</a>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="#services" class="nav-link">
+                        Insurance
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#quote" class="nav-link">
+                        Service Center
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#reviews" class="nav-link">
+                        Partners
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#why-us" class="nav-link">
+                        Resources
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        Company
+                        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                </div>
             </nav>
 
-            <div style="display: flex; gap: 12px; align-items: center;">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <div class="header-actions">
+                <a href="tel:18189686652" class="header-phone">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (818) 968-6652
+                </a>
+                <button class="btn btn-outline" onclick="openModal('specialistModal')">
+                    Login to Portal
+                </button>
+                <button class="btn btn-gold" onclick="openModal('quoteModal')">
+                    Get My Quotes
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+                <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle dark mode">
                     <svg class="sun-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                     <svg class="moon-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
-                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">✨ First Class Insurance Services</div>
-            <h1>GET YOUR FIRST CLASS<br>INSURANCE SERVICES</h1>
-            <p>Exclusive insurance solutions for Care Facilities and RCFE Owners. Whether you are just shopping or a first timer, this is the best option.</p>
-            <div class="hero-buttons">
-                <a href="#quote" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.05rem;">Get a Quote Today</a>
-                <a href="#services" class="btn btn-outline" style="padding: 16px 32px; font-size: 1.05rem;">Explore Services</a>
+            <div class="hero-content">
+                <div class="hero-badge">Business Insurance Made Easy</div>
+                <h1>Workers' Comp & Business<br>Insurance <span class="highlight">In Minutes</span></h1>
+                <p>Exclusive insurance solutions for Care Facilities and RCFE Owners. We shop top carriers to find you the right coverage at the best price.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-gold" onclick="openModal('quoteModal')">
+                        Get My Quotes
+                        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="btn btn-outline" onclick="openModal('specialistModal')">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Talk to a Specialist
+                    </button>
+                </div>
+                <div class="hero-ai-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    Powered by AI
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section (Adapted from your text) -->
+    <!-- WHY US SECTION - eCompNow 2nd Screenshot Style -->
     <section id="why-us" class="why-us">
         <div class="container">
-            <div class="why-us-header">
-                <h2>Why All Quality Insurance?</h2>
-                <p class="highlight-text">Save Time, Save Money.</p>
-                <p style="margin-top: 16px;">We've turned buying business insurance into a fast, simple experience, shopping top carriers to land you the right coverage at the best price.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div class="why-us-inner">
+                <div class="why-us-label">Why All Quality</div>
+                <h2>Save Time, Save Money.</h2>
+                <p class="why-us-subtitle">We've turned buying business insurance into a fast, simple experience, shopping top carriers to land you the right coverage at the best price.</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <p>Get insurance quotes in minutes from the best insurance companies in the country</p>
                     </div>
-                    <h3>Minimize your insurance costs without compromising coverages</h3>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <p>Work with a dedicated account manager who knows your business</p>
                     </div>
-                    <h3>Mitigate insurance claims through loss control and safety</h3>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <p>Minimize your insurance costs without compromising coverages</p>
                     </div>
-                    <h3>Reduce your experience modification through claims management</h3>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <p>Mitigate insurance claims through loss control and safety</p>
                     </div>
-                    <h3>Reduce your audit exposure</h3>
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <p>Reduce your experience modification through claims management</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <p>Reduce your audit exposure</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- SERVICES SECTION -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Our Insurance Products</h2>
-                <p>Specialized coverage designed specifically for the unique needs of care facilities and RCFE owners.</p>
+                <div class="section-label">Our Insurance Products</div>
+                <h2>Specialized Coverage for Care Facilities</h2>
+                <p>Designed specifically for the unique needs of care facilities and RCFE owners across California.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -759,23 +1279,24 @@
                 <div class="service-card">
                     <div class="service-icon">🏠</div>
                     <h3>Commercial Property</h3>
-                    <p>Many RCFE Owners don’t realize their home must be protected by commercial property insurance. Get a quote today.</p>
+                    <p>Many RCFE Owners don't realize their home must be protected by commercial property insurance. Get a quote today.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- REVIEWS SECTION -->
     <section id="reviews" class="reviews">
         <div class="container">
             <div class="section-header">
+                <div class="section-label">Client Testimonials</div>
                 <h2>What Our Clients Say</h2>
                 <p>Trusted by care facility owners across California for our exceptional service and unmatched rates.</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p class="review-text">"All Quality Insurance made getting our Workers' Comp incredibly easy. They found us the lowest rates on the market, and their free risk management services have been a game-changer for our facility."</p>
+                    <p class="review-text">"All Quality Insurance made getting our Workers' Comp incredibly easy. They found us the lowest rates on the market, and their risk management services have been a game-changer for our facility."</p>
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">SM</div>
                         <div class="reviewer-details">
@@ -810,11 +1331,12 @@
         </div>
     </section>
 
-    <!-- Quote / Contact Section -->
+    <!-- QUOTE / CONTACT SECTION -->
     <section id="quote" class="quote-section">
         <div class="container">
             <div class="quote-wrapper">
                 <div class="quote-info">
+                    <div class="section-label" style="text-align: left;">Get Started</div>
                     <h2>Ready to get covered?</h2>
                     <p>Contact us today to get a quote tailored to your care facility. We provide the lowest rates on the market with first-class service.</p>
                     
@@ -824,8 +1346,7 @@
                     </div>
                 </div>
 
-                <!-- Formspree Integration -->
-                <form class="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="quote-form" id="mainQuoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                     <h3>Request a Quote</h3>
                     
                     <div class="form-row">
@@ -860,7 +1381,10 @@
                         <textarea id="message" name="message" rows="4" placeholder="Tell us about your facility or any specific questions..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.05rem;">Submit Quote Request</button>
+                    <button type="submit" class="btn btn-gold" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+                        Submit Quote Request
+                        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
                     
                     <p class="form-privacy">🔒 Your information is secure and will only be used to provide your insurance quote.</p>
                 </form>
@@ -868,14 +1392,17 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        ALL QUALITY <span>INSURANCE</span>
+                        <div class="logo-icon" style="width: 36px; height: 36px; font-size: 1rem;">🛡️</div>
+                        <div class="logo-text">
+                            <span class="brand">ALL QUALITY</span>
+                            <span class="sub">Insurance Services</span>
+                        </div>
                     </div>
                     <p>Providing first-class insurance services exclusively for Care Facilities and RCFE Owners with the lowest rates on the market.</p>
                 </div>
@@ -902,13 +1429,136 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- QUOTE MODAL (Get My Quotes) -->
+    <div class="modal-overlay" id="quoteModal" onclick="closeModalOnOverlay(event, 'quoteModal')">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <h3>Get Your Quote</h3>
+                    <p>Fill out the form and we'll get back to you within 24 hours.</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('quoteModal')" aria-label="Close">
+                    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="modal-name">Full Name *</label>
+                            <input type="text" id="modal-name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="modal-phone">Phone Number *</label>
+                            <input type="tel" id="modal-phone" name="phone" required placeholder="(818) 000-0000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-email">Email Address *</label>
+                        <input type="email" id="modal-email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-service">Insurance Product Needed *</label>
+                        <select id="modal-service" name="service" required>
+                            <option value="">-- Select a Service --</option>
+                            <option value="Workers Compensation">Workers Compensation</option>
+                            <option value="RCFE Liability">RCFE Liability</option>
+                            <option value="Commercial Property">Commercial Property</option>
+                            <option value="Other">Other / Not Sure</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-message">Additional Details</label>
+                        <textarea id="modal-message" name="message" rows="3" placeholder="Tell us about your facility..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-gold" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+                        Send Quote Request
+                        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                    
+                    <p class="form-privacy">🔒 Your information is secure and will only be used to provide your insurance quote.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SPECIALIST MODAL (Talk to a Specialist) -->
+    <div class="modal-overlay" id="specialistModal" onclick="closeModalOnOverlay(event, 'specialistModal')">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <h3>Talk to a Specialist</h3>
+                    <p>Our insurance experts are ready to help you.</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('specialistModal')" aria-label="Close">
+                    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="specialist-content">
+                    <div class="specialist-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h4>Speak with an Insurance Agent</h4>
+                    <p>Get personalized advice for your care facility's insurance needs.</p>
+                    
+                    <div class="specialist-phone">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <a href="tel:18189686652">1-(818) 968-6652</a>
+                    </div>
+                    
+                    <div class="specialist-hours">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Monday – Friday, 9:00 AM – 6:00 PM PST
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
     <script>
         // Mobile Menu Toggle
-        function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
+        function toggleMobileMenu() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('mobile-active');
         }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('mobile-active');
+            });
+        });
+
+        // Modal Functions
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnOverlay(event, id) {
+            if (event.target === event.currentTarget) {
+                closeModal(id);
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal('quoteModal');
+                closeModal('specialistModal');
+            }
+        });
 
         // Dark/Light Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
@@ -916,7 +1566,6 @@
         const moonIcon = themeToggle.querySelector('.moon-icon');
         const html = document.documentElement;
 
-        // Check localStorage or system preference
         const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         html.setAttribute('data-theme', currentTheme);
         updateIcons(currentTheme);
@@ -937,6 +1586,29 @@
                 moonIcon.style.display = 'none';
             }
         }
+
+        // Form submission handler (prevents default for demo, remove if using Formspree)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                // If using Formspree, remove this event listener
+                // For demo purposes, we show a success message
+                if (this.action.includes('YOUR_FORM_ID')) {
+                    e.preventDefault();
+                    const btn = this.querySelector('button[type="submit"]');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '✓ Request Sent Successfully!';
+                    btn.style.background = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                        this.reset();
+                        // Close modal if it's the modal form
+                        const modal = this.closest('.modal-overlay');
+                        if (modal) closeModal(modal.id);
+                    }, 2500);
+                }
+            });
+        });
     </script>
 </body>
 </html>
