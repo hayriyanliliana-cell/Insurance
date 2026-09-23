@@ -386,6 +386,11 @@
             display: flex; align-items: center; justify-content: center;
             margin-top: 2px;
             box-shadow: 0 4px 10px rgba(242, 132, 47, 0.3);
+            transition: var(--transition);
+        }
+        .benefit-item:hover .benefit-check {
+            transform: scale(1.15);
+            box-shadow: 0 6px 16px rgba(242, 132, 47, 0.45);
         }
         .benefit-check svg { width: 14px; height: 14px; stroke: white; fill: none; stroke-width: 3; }
         .benefit-item p { font-size: 1rem; color: var(--text-main); font-weight: 500; line-height: 1.5; }
@@ -403,8 +408,26 @@
             border: 1px solid var(--border);
             transition: var(--transition);
             box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
         }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--highlight) 0%, var(--highlight-hover) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
         .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--highlight); }
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-hover) 100%);
+            color: #FFFFFF;
+            transform: scale(1.1) rotate(-5deg);
+        }
         .service-icon {
             width: 64px; height: 64px;
             background: linear-gradient(135deg, rgba(37, 60, 109, 0.1) 0%, rgba(48, 73, 125, 0.1) 100%);
@@ -412,6 +435,7 @@
             border-radius: 16px;
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 24px;
+            transition: var(--transition);
         }
         .service-icon svg { width: 32px; height: 32px; stroke: currentColor; fill: none; stroke-width: 2; }
         .service-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px; }
@@ -426,6 +450,11 @@
             border-radius: 20px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .review-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
         }
         .stars { color: var(--highlight); font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 2px; }
         .review-text { color: var(--text-main); font-size: 1rem; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
@@ -451,6 +480,24 @@
             border-radius: 16px;
             border: 1px solid rgba(242, 132, 47, 0.2);
             display: flex; flex-direction: column; gap: 8px;
+            position: relative;
+            transition: var(--transition);
+        }
+        .contact-highlight::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, var(--highlight), var(--highlight-hover), var(--highlight));
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.4s ease;
+            filter: blur(8px);
+        }
+        .contact-highlight:hover::after { opacity: 0.4; }
+        .contact-highlight:hover {
+            border-color: var(--highlight);
+            transform: scale(1.02);
         }
         .contact-highlight span { font-size: 0.85rem; color: var(--text-light); font-weight: 500; }
         .contact-highlight a { font-size: 1.6rem; font-weight: 800; color: var(--highlight); }
@@ -552,6 +599,83 @@
         }
         .logo-splash.hidden img { height: 72px; transform: translateY(-50vh); }
 
+        /* ============================================
+           EFFECTS - Scroll Reveal & Animations
+           ============================================ */
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Hero stagger animation */
+        .hero-content .section-label,
+        .hero-content h1,
+        .hero-content p,
+        .hero-buttons {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .hero-content .section-label { animation-delay: 0.3s; }
+        .hero-content h1 { animation-delay: 0.5s; }
+        .hero-content p { animation-delay: 0.7s; }
+        .hero-buttons { animation-delay: 0.9s; }
+
+        @keyframes heroFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Button ripple */
+        .btn-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        /* Mobile nav stagger */
+        .mobile-overlay.active .mobile-nav-link {
+            opacity: 0;
+            transform: translateX(30px);
+            animation: mobileNavSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .mobile-overlay.active .mobile-nav-link:nth-child(1) { animation-delay: 0.1s; }
+        .mobile-overlay.active .mobile-nav-link:nth-child(2) { animation-delay: 0.15s; }
+        .mobile-overlay.active .mobile-nav-link:nth-child(3) { animation-delay: 0.2s; }
+        .mobile-overlay.active .mobile-nav-link:nth-child(4) { animation-delay: 0.25s; }
+        .mobile-overlay.active .mobile-nav-link:nth-child(5) { animation-delay: 0.3s; }
+        .mobile-overlay.active .mobile-actions {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: mobileNavSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 0.35s;
+        }
+        @keyframes mobileNavSlide {
+            to { opacity: 1; transform: translateX(0) translateY(0); }
+        }
+
+        /* Hamburger pulse */
+        @keyframes hamburgerPulse {
+            0%, 100% { box-shadow: 0 4px 16px rgba(37, 60, 109, 0.25), 0 0 0 0 rgba(242, 132, 47, 0.4); }
+            50% { box-shadow: 0 4px 16px rgba(37, 60, 109, 0.25), 0 0 0 8px rgba(242, 132, 47, 0); }
+        }
+
         /* RESPONSIVE */
         @media (min-width: 1101px) {
             .mobile-overlay { display: none !important; }
@@ -575,10 +699,6 @@
                 transition: var(--transition);
                 position: relative;
                 animation: hamburgerPulse 2.5s infinite;
-            }
-            @keyframes hamburgerPulse {
-                0%, 100% { box-shadow: 0 4px 16px rgba(37, 60, 109, 0.25), 0 0 0 0 rgba(242, 132, 47, 0.4); }
-                50% { box-shadow: 0 4px 16px rgba(37, 60, 109, 0.25), 0 0 0 8px rgba(242, 132, 47, 0); }
             }
             .mobile-menu-btn:hover { transform: scale(1.05); background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-hover) 100%); }
 
@@ -634,7 +754,6 @@
             }
             .review-card { min-width: 280px; max-width: 280px; scroll-snap-align: start; flex-shrink: 0; }
 
-            /* MOBILE BUTTONS - SMALLER, RESPONSIVE */
             .hero-buttons {
                 gap: 12px;
                 flex-direction: column;
@@ -649,10 +768,7 @@
                 border-radius: 12px;
                 gap: 6px;
             }
-            .hero-buttons .btn svg {
-                width: 14px;
-                height: 14px;
-            }
+            .hero-buttons .btn svg { width: 14px; height: 14px; }
 
             .quote-form .btn {
                 width: 100% !important;
@@ -668,10 +784,7 @@
                 border-radius: 12px;
                 gap: 6px;
             }
-            .modal .btn svg {
-                width: 14px;
-                height: 14px;
-            }
+            .modal .btn svg { width: 14px; height: 14px; }
 
             .mobile-actions .btn {
                 width: 100%;
@@ -680,20 +793,14 @@
                 border-radius: 12px;
                 gap: 6px;
             }
-            .mobile-actions .btn svg {
-                width: 14px;
-                height: 14px;
-            }
+            .mobile-actions .btn svg { width: 14px; height: 14px; }
 
             .mobile-phone {
                 padding: 12px 16px;
                 font-size: 0.9rem;
                 border-radius: 12px;
             }
-            .mobile-phone svg {
-                width: 16px;
-                height: 16px;
-            }
+            .mobile-phone svg { width: 16px; height: 16px; }
         }
 
         @media (max-width: 900px) {
@@ -717,27 +824,11 @@
             .mobile-menu-btn::before { top: 15px; }
             .mobile-menu-btn::after { bottom: 15px; }
 
-            /* Even smaller buttons on very small screens */
-            .hero-buttons .btn {
-                padding: 11px 18px;
-                font-size: 0.825rem;
-            }
-            .quote-form .btn {
-                padding: 11px 18px !important;
-                font-size: 0.825rem !important;
-            }
-            .modal .btn {
-                padding: 11px 18px;
-                font-size: 0.825rem;
-            }
-            .mobile-actions .btn {
-                padding: 11px 18px;
-                font-size: 0.825rem;
-            }
-            .mobile-phone {
-                padding: 11px 14px;
-                font-size: 0.85rem;
-            }
+            .hero-buttons .btn { padding: 11px 18px; font-size: 0.825rem; }
+            .quote-form .btn { padding: 11px 18px !important; font-size: 0.825rem !important; }
+            .modal .btn { padding: 11px 18px; font-size: 0.825rem; }
+            .mobile-actions .btn { padding: 11px 18px; font-size: 0.825rem; }
+            .mobile-phone { padding: 11px 14px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -867,23 +958,23 @@
     <section id="why-us" class="why-us">
         <div class="container">
             <div class="why-us-inner">
-                <div class="section-label">Why All Quality</div>
-                <h2>Save Time, Save Money.</h2>
-                <p class="why-us-subtitle">We've turned buying business insurance into a fast, simple experience, shopping top carriers to land you the right coverage at the best price.</p>
+                <div class="section-label reveal">Why All Quality</div>
+                <h2 class="reveal">Save Time, Save Money.</h2>
+                <p class="why-us-subtitle reveal">We've turned buying business insurance into a fast, simple experience, shopping top carriers to land you the right coverage at the best price.</p>
                 <div class="benefits-grid">
-                    <div class="benefit-item">
+                    <div class="benefit-item reveal reveal-delay-1">
                         <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
                         <p>Minimize your insurance costs without compromising coverages</p>
                     </div>
-                    <div class="benefit-item">
+                    <div class="benefit-item reveal reveal-delay-2">
                         <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
                         <p>Mitigate insurance claims through loss control and safety</p>
                     </div>
-                    <div class="benefit-item">
+                    <div class="benefit-item reveal reveal-delay-3">
                         <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
                         <p>Reduce your experience modification through claims management</p>
                     </div>
-                    <div class="benefit-item">
+                    <div class="benefit-item reveal reveal-delay-4">
                         <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
                         <p>Reduce your audit exposure</p>
                     </div>
@@ -895,26 +986,26 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <div class="section-label">Our Insurance Products</div>
-                <h2>Specialized Coverage for Care Facilities</h2>
-                <p>Designed specifically for the unique needs of care facilities and RCFE owners across California.</p>
+                <div class="section-label reveal">Our Insurance Products</div>
+                <h2 class="reveal">Specialized Coverage for Care Facilities</h2>
+                <p class="reveal">Designed specifically for the unique needs of care facilities and RCFE owners across California.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-1">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
                     <h3>Workers Compensation</h3>
                     <p>Exclusive for Care Facilities with the lowest rates on the market. Whether you are just shopping or a first timer, this is the best option.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-2">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <h3>RCFE Liability</h3>
                     <p>Get a General & Professional Liability Insurance quote. Bind and get a Certificate of Insurance.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-3">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     </div>
@@ -928,12 +1019,12 @@
     <section id="reviews" class="reviews">
         <div class="container">
             <div class="section-header">
-                <div class="section-label">Client Testimonials</div>
-                <h2>What Our Clients Say</h2>
-                <p>Trusted by care facility owners across California for our exceptional service and unmatched rates.</p>
+                <div class="section-label reveal">Client Testimonials</div>
+                <h2 class="reveal">What Our Clients Say</h2>
+                <p class="reveal">Trusted by care facility owners across California for our exceptional service and unmatched rates.</p>
             </div>
             <div class="reviews-grid">
-                <div class="review-card">
+                <div class="review-card reveal reveal-delay-1">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"All Quality Insurance made getting our Workers' Comp incredibly easy. They found us the lowest rates on the market, and their risk management services have been a game-changer for our facility."</p>
                     <div class="reviewer-info">
@@ -944,7 +1035,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal reveal-delay-2">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"I was worried about the complexity of RCFE Liability insurance, but their team guided me through every step. We got bound quickly and received our Certificate of Insurance the same day. Highly recommended!"</p>
                     <div class="reviewer-info">
@@ -955,7 +1046,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal reveal-delay-3">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"Professional, responsive, and truly knowledgeable about the care facility industry. They helped us reduce our audit exposure and saved us a significant amount of money on our commercial property policy."</p>
                     <div class="reviewer-info">
@@ -974,16 +1065,16 @@
         <div class="container">
             <div class="quote-wrapper">
                 <div class="quote-info">
-                    <div class="section-label" style="text-align: left;">Get Started</div>
-                    <h2>Ready to get covered?</h2>
-                    <p>Contact us today to get a quote tailored to your care facility. We provide the lowest rates on the market with first-class service.</p>
-                    <div class="contact-highlight">
+                    <div class="section-label reveal" style="text-align: left;">Get Started</div>
+                    <h2 class="reveal">Ready to get covered?</h2>
+                    <p class="reveal">Contact us today to get a quote tailored to your care facility. We provide the lowest rates on the market with first-class service.</p>
+                    <div class="contact-highlight reveal">
                         <span>Prefer to speak with an agent directly?</span>
                         <a href="tel:18189686652">1-(818) 968-6652</a>
                     </div>
                 </div>
 
-                <form class="quote-form" id="mainQuoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="quote-form reveal" id="mainQuoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                     <h3>Request a Quote</h3>
                     <div class="form-row">
                         <div class="form-group">
@@ -1138,6 +1229,7 @@
     </div>
 
     <script>
+        // Logo Splash
         window.addEventListener('load', () => {
             const splash = document.getElementById('logoSplash');
             if (splash) {
@@ -1146,26 +1238,25 @@
             }
         });
 
+        // Mobile Menu
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
             overlay.classList.toggle('active');
             document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
         }
 
+        // Modals
         function openModal(id) {
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
         function closeModal(id) {
             document.getElementById(id).classList.remove('active');
             document.body.style.overflow = '';
         }
-
         function closeModalOnOverlay(event, id) {
             if (event.target === event.currentTarget) closeModal(id);
         }
-
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal('quoteModal');
@@ -1175,6 +1266,7 @@
             }
         });
 
+        // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const mobileThemeToggle = document.getElementById('mobileThemeToggle');
         const sunIcons = document.querySelectorAll('.sun-icon');
@@ -1191,7 +1283,6 @@
             localStorage.setItem('theme', newTheme);
             updateIcons(newTheme);
         }
-
         themeToggle.addEventListener('click', toggleTheme);
         mobileThemeToggle.addEventListener('click', toggleTheme);
 
@@ -1205,6 +1296,42 @@
             }
         }
 
+        // ============================================
+        // EFFECTS SCRIPTS
+        // ============================================
+
+        // Scroll Reveal (Intersection Observer)
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Button Ripple Effect
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('btn-ripple');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Form submission handler
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function(e) {
                 if (this.action.includes('YOUR_FORM_ID')) {
