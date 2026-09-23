@@ -6,68 +6,56 @@
     <title>All Quality Insurance Services | Workers' Comp & Business Insurance</title>
     <meta name="description" content="All Quality Insurance Services offers Workers Compensation, RCFE Liability, and Commercial Property insurance exclusively for care facilities.">
     
-    <!-- Google Fonts: Inter (eCompNow style) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* =========================================
-           CSS VARIABLES - New Dynamic Color Scheme
-           Deep Teal + Vibrant Gold + Electric Accents
-           ========================================= */
         :root {
-            --primary: #0D4F6B;           /* Deep Teal - Main Brand Color */
-            --secondary: #1A6B8A;         /* Medium Teal */
-            --accent: #2E8B9E;            /* Light Teal */
-            --highlight: #F5A623;         /* Vibrant Gold - CTA/Buttons */
-            --highlight-hover: #E8950F;
-            --electric: #FF6B35;          /* Electric Orange - Accent */
-            --success: #10B981;           /* Emerald Green */
+            --primary: #253C6D;
+            --secondary: #30497D;
+            --accent: #455B8A;
+            --highlight: #F2842F;
+            --highlight-hover: #d97224;
             
             --bg-body: #FFFFFF;
-            --bg-soft: #F0F9FB;           /* Very light teal tint */
+            --bg-soft: #F8FAFC;
             --bg-card: #FFFFFF;
             
-            --text-main: #0D4F6B;         /* Deep Teal for text */
-            --text-muted: #1A6B8A;
-            --text-light: #5A7D8A;
+            --text-main: #253C6D;
+            --text-muted: #455B8A;
+            --text-light: #64748B;
             
-            --border: #D1E8ED;
+            --border: #E2E8F0;
             
-            --shadow-sm: 0 1px 2px rgba(13, 79, 107, 0.05);
-            --shadow: 0 4px 12px rgba(13, 79, 107, 0.08);
-            --shadow-lg: 0 12px 32px rgba(13, 79, 107, 0.12);
-            --shadow-highlight: 0 8px 24px rgba(245, 166, 35, 0.35);
-            --shadow-electric: 0 8px 24px rgba(255, 107, 53, 0.3);
+            --shadow-sm: 0 1px 2px rgba(37, 60, 109, 0.05);
+            --shadow: 0 4px 12px rgba(37, 60, 109, 0.08);
+            --shadow-lg: 0 12px 32px rgba(37, 60, 109, 0.12);
+            --shadow-highlight: 0 8px 24px rgba(242, 132, 47, 0.3);
             
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
-            --primary: #2E8B9E;
-            --secondary: #1A6B8A;
-            --accent: #0D4F6B;
-            --highlight: #F5A623;
-            --highlight-hover: #FFB84D;
-            --electric: #FF8C5A;
+            --primary: #455B8A;
+            --secondary: #30497D;
+            --accent: #253C6D;
+            --highlight: #F2842F;
+            --highlight-hover: #f59e56;
             
-            --bg-body: #0A1929;
-            --bg-soft: #132F43;
-            --bg-card: #132F43;
+            --bg-body: #0F172A;
+            --bg-soft: #1E293B;
+            --bg-card: #1E293B;
             
-            --text-main: #E8F4F8;
-            --text-muted: #B8D4DC;
-            --text-light: #7A9BA8;
+            --text-main: #F8FAFC;
+            --text-muted: #CBD5E1;
+            --text-light: #94A3B8;
             
-            --border: #1E3A4D;
+            --border: #334155;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
         }
 
-        /* =========================================
-           RESET & BASE
-           ========================================= */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
@@ -89,9 +77,7 @@
             padding: 0 24px;
         }
 
-        /* =========================================
-           HEADER - Centered Logo Layout (Desktop)
-           ========================================= */
+        /* HEADER */
         .header {
             background-color: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(12px);
@@ -102,7 +88,7 @@
             transition: var(--transition);
             padding: 16px 0 0;
         }
-        [data-theme="dark"] .header { background-color: rgba(10, 25, 41, 0.98); }
+        [data-theme="dark"] .header { background-color: rgba(15, 23, 42, 0.98); }
 
         .header-top {
             display: flex;
@@ -111,17 +97,8 @@
             padding-bottom: 16px;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo img {
-            height: 72px;
-            width: auto;
-            object-fit: contain;
-        }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 72px; width: auto; object-fit: contain; }
 
         .header-bottom {
             display: flex;
@@ -151,18 +128,9 @@
             border-radius: 8px;
             transition: var(--transition);
         }
+        .nav-link:hover { background-color: var(--bg-soft); color: var(--primary); }
 
-        .nav-link:hover {
-            background-color: var(--bg-soft);
-            color: var(--primary);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-shrink: 0;
-        }
+        .header-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
 
         .header-phone {
             display: flex;
@@ -175,11 +143,10 @@
             border-radius: 8px;
             transition: var(--transition);
         }
-
         .header-phone:hover { background-color: var(--bg-soft); color: var(--primary); }
         .header-phone svg { width: 18px; height: 18px; stroke: var(--highlight); fill: none; stroke-width: 2; }
 
-        /* Button Styles - Enhanced with Dynamic Colors */
+        /* BUTTONS */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -198,7 +165,6 @@
             white-space: nowrap;
         }
 
-        /* Shining Hover Effect */
         .btn::before {
             content: '';
             position: absolute;
@@ -209,18 +175,18 @@
         .btn:hover::before { left: 100%; }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--highlight) 0%, var(--electric) 100%);
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-hover) 100%);
             color: #FFFFFF;
             box-shadow: var(--shadow-highlight);
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(245, 166, 35, 0.45); }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(242, 132, 47, 0.4); }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            border: 1.5px solid var(--border);
+            color: var(--text-main);
         }
-        .btn-outline:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); background: var(--bg-soft); }
 
         .btn-ghost {
             background: transparent; border: none; color: var(--text-muted); padding: 10px;
@@ -232,18 +198,13 @@
         .btn-ghost:hover { color: var(--primary); background: var(--bg-soft); border-color: var(--primary); }
         .btn-ghost svg { width: 20px; height: 20px; }
 
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
+        .mobile-menu-btn { display: none; }
 
-        /* =========================================
-           MOBILE MENU OVERLAY (eCompNow Style)
-           ========================================= */
+        /* MOBILE OVERLAY */
         .mobile-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--bg-body);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, #253C6D 0%, #30497D 40%, #455B8A 100%);
             z-index: 2000;
             padding: 24px;
             display: flex;
@@ -252,10 +213,7 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-y: auto;
         }
-
-        .mobile-overlay.active {
-            transform: translateX(0);
-        }
+        .mobile-overlay.active { transform: translateX(0); }
 
         .mobile-header {
             display: flex;
@@ -264,153 +222,110 @@
             margin-bottom: 40px;
         }
 
-        .mobile-logo img {
-            height: 48px;
-            width: auto;
-        }
+        .mobile-logo img { height: 56px; width: auto; filter: brightness(0) invert(1); }
 
         .mobile-close {
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: #FFFFFF;
             cursor: pointer;
-            padding: 8px;
-        }
-
-        .mobile-nav {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
-            flex: 1;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
         }
+        .mobile-close:hover { background: rgba(255, 255, 255, 0.25); transform: rotate(90deg); }
+
+        .mobile-nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
 
         .mobile-nav-link {
             display: block;
-            padding: 16px 0;
-            font-size: 1.25rem;
+            padding: 18px 20px;
+            font-size: 1.15rem;
             font-weight: 600;
-            color: var(--text-main);
-            border-bottom: 1px solid var(--border);
+            color: #FFFFFF;
+            border-radius: 12px;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-
+        .mobile-nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: #F2842F;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
         .mobile-nav-link:hover {
-            color: var(--highlight);
-            padding-left: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding-left: 28px;
+            color: #F2842F;
         }
+        .mobile-nav-link:hover::before { transform: scaleY(1); }
 
-        .mobile-actions {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+        .mobile-actions { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
 
         .mobile-actions .btn {
             width: 100%;
-            padding: 14px 32px;
+            padding: 16px 28px;
             font-size: 1rem;
             justify-content: center;
+            border-radius: 14px;
+            font-weight: 700;
+        }
+        .mobile-actions .btn-primary {
+            background: linear-gradient(135deg, #F2842F 0%, #d97224 100%);
+            color: #FFFFFF;
+            box-shadow: 0 8px 24px rgba(242, 132, 47, 0.4);
         }
 
         .mobile-phone {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-main);
+            gap: 10px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #FFFFFF;
             padding: 16px;
-            border: 1.5px solid var(--border);
-            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
             transition: var(--transition);
         }
-
-        .mobile-phone:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .mobile-phone svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--highlight);
-            fill: none;
-            stroke-width: 2;
-        }
+        .mobile-phone:hover { background: rgba(242, 132, 47, 0.15); border-color: #F2842F; color: #F2842F; }
+        .mobile-phone svg { width: 20px; height: 20px; stroke: #F2842F; fill: none; stroke-width: 2; }
 
         .mobile-theme-toggle {
-            margin-top: 24px;
+            margin-top: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding: 16px;
-            background: var(--bg-soft);
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 12px;
             cursor: pointer;
-            font-weight: 500;
-            color: var(--text-muted);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            transition: var(--transition);
         }
+        .mobile-theme-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+        .mobile-theme-toggle svg { width: 20px; height: 20px; }
 
-        .mobile-theme-toggle svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* =========================================
-           HERO SECTION - Enhanced with Gradient
-           ========================================= */
+        /* HERO */
         .hero {
             padding: 100px 0 120px;
-            background: linear-gradient(135deg, 
-                rgba(13, 79, 107, 0.03) 0%, 
-                rgba(245, 166, 35, 0.05) 50%, 
-                rgba(255, 107, 53, 0.03) 100%), 
-                var(--bg-body);
+            background: radial-gradient(circle at 50% 0%, rgba(37, 60, 109, 0.05) 0%, transparent 50%), var(--bg-body);
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(13, 79, 107, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 25s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, -30px); }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
+        .hero-content { max-width: 800px; margin: 0 auto; }
         .hero-content h1 {
             font-size: 3.5rem;
             font-weight: 900;
@@ -419,16 +334,7 @@
             letter-spacing: -0.03em;
             color: var(--text-main);
         }
-
-        .hero-content h1 span {
-            background: linear-gradient(135deg, var(--highlight) 0%, var(--electric) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            display: inline-block;
-        }
-        
+        .hero-content h1 span { color: var(--highlight); position: relative; display: inline-block; }
         .hero-content p {
             font-size: 1.25rem;
             color: var(--text-muted);
@@ -438,18 +344,10 @@
             margin-right: auto;
             line-height: 1.7;
         }
-
-        .hero-buttons { 
-            display: flex; 
-            gap: 16px; 
-            justify-content: center; 
-            flex-wrap: wrap; 
-        }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
         .hero-buttons .btn { padding: 14px 32px; font-size: 1rem; }
 
-        /* =========================================
-           PERMANENT SHINING LABELS - Enhanced
-           ========================================= */
+        /* SECTION LABELS */
         .section-label {
             display: inline-block;
             color: var(--highlight);
@@ -458,16 +356,13 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-bottom: 16px;
-            background: linear-gradient(135deg, rgba(245, 166, 35, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            background: rgba(242, 132, 47, 0.1);
             padding: 6px 16px;
             border-radius: 50px;
             position: relative;
             overflow: hidden;
             cursor: default;
-            border: 1px solid rgba(245, 166, 35, 0.2);
         }
-
-        /* Permanent shining effect for labels */
         .section-label::before {
             content: '';
             position: absolute;
@@ -475,88 +370,32 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
             animation: shineLabel 2.5s infinite;
         }
+        @keyframes shineLabel { 0% { left: -100%; } 50%, 100% { left: 100%; } }
 
-        @keyframes shineLabel {
-            0% { left: -100%; }
-            50%, 100% { left: 100%; }
-        }
-
-        /* =========================================
-           WHY US SECTION - Enhanced
-           ========================================= */
-        .why-us { 
-            padding: 100px 0; 
-            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-body) 100%); 
-        }
+        /* WHY US */
+        .why-us { padding: 100px 0; background-color: var(--bg-soft); }
         .why-us-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-        
-        .why-us h2 { 
-            font-size: 2.75rem; 
-            font-weight: 900; 
-            color: var(--text-main); 
-            margin-bottom: 24px; 
-            letter-spacing: -0.02em; 
-        }
-        .why-us-subtitle { 
-            font-size: 1.1rem; 
-            color: var(--text-muted); 
-            margin-bottom: 56px; 
-            max-width: 640px; 
-            margin-left: auto; 
-            margin-right: auto; 
-        }
-
+        .why-us h2 { font-size: 2.75rem; font-weight: 900; color: var(--text-main); margin-bottom: 24px; letter-spacing: -0.02em; }
+        .why-us-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 56px; max-width: 640px; margin-left: auto; margin-right: auto; }
         .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; text-align: left; }
-        
         .benefit-item { display: flex; align-items: flex-start; gap: 16px; }
-        
         .benefit-check {
             width: 28px; height: 28px; min-width: 28px;
-            background: linear-gradient(135deg, var(--highlight) 0%, var(--electric) 100%);
+            background-color: var(--highlight);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             margin-top: 2px;
-            box-shadow: 0 4px 12px rgba(245, 166, 35, 0.35);
+            box-shadow: 0 4px 10px rgba(242, 132, 47, 0.3);
         }
         .benefit-check svg { width: 14px; height: 14px; stroke: white; fill: none; stroke-width: 3; }
         .benefit-item p { font-size: 1rem; color: var(--text-main); font-weight: 500; line-height: 1.5; }
 
-        /* =========================================
-           SERVICES SECTION - Enhanced Cards
-           ========================================= */
+        /* SERVICES */
         .services { padding: 100px 0; background-color: var(--bg-body); }
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
         .section-header h2 { font-size: 2.5rem; font-weight: 900; color: var(--text-main); margin-bottom: 16px; }
         .section-header p { color: var(--text-muted); font-size: 1.05rem; }
-
-        .services-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 28px; 
-        }
-        
-        /* Mobile Carousel Styles for Services */
-        @media (max-width: 768px) {
-            .services-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                gap: 16px;
-                padding-bottom: 20px;
-                margin: 0 -24px;
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-            
-            .service-card {
-                min-width: 280px;
-                max-width: 280px;
-                scroll-snap-align: start;
-                flex-shrink: 0;
-            }
-        }
-
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
         .service-card {
             background: var(--bg-card);
             padding: 40px 32px;
@@ -564,120 +403,36 @@
             border: 1px solid var(--border);
             transition: var(--transition);
             box-shadow: var(--shadow-sm);
-            position: relative;
-            overflow: hidden;
         }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--highlight) 0%, var(--electric) 100%);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: var(--shadow-lg); 
-            border-color: var(--highlight); 
-        }
-
+        .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--highlight); }
         .service-icon {
             width: 64px; height: 64px;
-            background: linear-gradient(135deg, rgba(13, 79, 107, 0.1) 0%, rgba(245, 166, 35, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(37, 60, 109, 0.1) 0%, rgba(48, 73, 125, 0.1) 100%);
             color: var(--primary);
             border-radius: 16px;
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 24px;
-            transition: var(--transition);
         }
-
-        .service-card:hover .service-icon {
-            background: linear-gradient(135deg, var(--highlight) 0%, var(--electric) 100%);
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .service-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
+        .service-icon svg { width: 32px; height: 32px; stroke: currentColor; fill: none; stroke-width: 2; }
         .service-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px; }
         .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
 
-        /* =========================================
-           REVIEWS SECTION - Enhanced
-           ========================================= */
-        .reviews { 
-            padding: 100px 0; 
-            background: linear-gradient(180deg, var(--bg-body) 0%, var(--bg-soft) 100%); 
-        }
-        .reviews-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 28px; 
-        }
-
-        /* Mobile Carousel Styles for Reviews */
-        @media (max-width: 768px) {
-            .reviews-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                gap: 16px;
-                padding-bottom: 20px;
-                margin: 0 -24px;
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-            
-            .review-card {
-                min-width: 280px;
-                max-width: 280px;
-                scroll-snap-align: start;
-                flex-shrink: 0;
-            }
-        }
-        
+        /* REVIEWS */
+        .reviews { padding: 100px 0; background-color: var(--bg-soft); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
         .review-card {
             background: var(--bg-card);
             padding: 32px;
             border-radius: 20px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow-sm);
-            transition: var(--transition);
         }
-
-        .review-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .stars { 
-            color: var(--highlight); 
-            font-size: 1.1rem; 
-            margin-bottom: 16px; 
-            letter-spacing: 2px; 
-        }
+        .stars { color: var(--highlight); font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 2px; }
         .review-text { color: var(--text-main); font-size: 1rem; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
-        
         .reviewer-info { display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid var(--border); }
         .reviewer-avatar {
             width: 48px; height: 48px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--highlight) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-weight: 700; font-size: 1rem;
@@ -685,39 +440,20 @@
         .reviewer-details h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
         .reviewer-details span { font-size: 0.8rem; color: var(--text-light); }
 
-        /* =========================================
-           QUOTE / CONTACT SECTION - Enhanced
-           ========================================= */
+        /* QUOTE */
         .quote-section { padding: 100px 0; background-color: var(--bg-body); }
         .quote-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
-        
         .quote-info h2 { font-size: 2.5rem; font-weight: 900; color: var(--text-main); margin-bottom: 20px; }
         .quote-info p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 32px; }
-        
         .contact-highlight {
-            background: linear-gradient(135deg, rgba(245, 166, 35, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
+            background: var(--bg-soft);
             padding: 28px;
             border-radius: 16px;
-            border: 2px solid rgba(245, 166, 35, 0.2);
+            border: 1px solid rgba(242, 132, 47, 0.2);
             display: flex; flex-direction: column; gap: 8px;
-            transition: var(--transition);
         }
-
-        .contact-highlight:hover {
-            border-color: var(--highlight);
-            transform: scale(1.02);
-        }
-
         .contact-highlight span { font-size: 0.85rem; color: var(--text-light); font-weight: 500; }
-        .contact-highlight a { 
-            font-size: 1.6rem; 
-            font-weight: 800; 
-            background: linear-gradient(135deg, var(--highlight) 0%, var(--electric) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
+        .contact-highlight a { font-size: 1.6rem; font-weight: 800; color: var(--highlight); }
         .quote-form {
             background: var(--bg-card);
             padding: 40px;
@@ -726,10 +462,8 @@
             border: 1px solid var(--border);
         }
         .quote-form h3 { font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin-bottom: 24px; }
-        
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-main); font-size: 0.85rem; }
-        
         .form-group input, .form-group select, .form-group textarea {
             width: 100%; padding: 12px 16px;
             background-color: var(--bg-soft);
@@ -740,18 +474,16 @@
         }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none; border-color: var(--highlight);
-            box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
+            box-shadow: 0 0 0 3px rgba(242, 132, 47, 0.1);
             background-color: var(--bg-card);
         }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .form-privacy { text-align: center; font-size: 0.75rem; color: var(--text-light); margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 6px; }
 
-        /* =========================================
-           MODALS - Enhanced
-           ========================================= */
+        /* MODALS */
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(13, 79, 107, 0.7);
+            background: rgba(37, 60, 109, 0.6);
             backdrop-filter: blur(8px);
             z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px;
             animation: fadeIn 0.3s ease;
@@ -759,7 +491,6 @@
         .modal-overlay.active { display: flex; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
-
         .modal {
             background: var(--bg-card); border-radius: 24px; max-width: 560px; width: 100%;
             max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg);
@@ -776,37 +507,28 @@
         .modal-close:hover { background: var(--border); color: var(--text-main); }
         .modal-close svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.5; }
         .modal-body { padding: 28px 32px 32px; }
-
         .specialist-content { text-align: center; padding: 20px 0; }
         .specialist-icon {
             width: 80px; height: 80px;
-            background: linear-gradient(135deg, var(--highlight) 0%, var(--electric) 100%);
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-hover) 100%);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             margin: 0 auto 24px; box-shadow: var(--shadow-highlight);
         }
         .specialist-icon svg { width: 40px; height: 40px; stroke: white; fill: none; stroke-width: 2; }
         .specialist-content h4 { font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
         .specialist-content > p { color: var(--text-muted); margin-bottom: 28px; font-size: 0.95rem; }
-        
         .specialist-phone {
             display: inline-flex; align-items: center; gap: 12px;
             background: var(--bg-soft); padding: 20px 32px; border-radius: 16px;
             border: 2px solid var(--highlight); margin-bottom: 24px; transition: var(--transition);
         }
-        .specialist-phone:hover { background: rgba(245, 166, 35, 0.08); transform: scale(1.02); }
+        .specialist-phone:hover { background: rgba(242, 132, 47, 0.08); transform: scale(1.02); }
         .specialist-phone svg { width: 24px; height: 24px; stroke: var(--highlight); fill: none; stroke-width: 2; }
         .specialist-phone a { font-size: 1.6rem; font-weight: 800; color: var(--text-main); }
         .specialist-hours { font-size: 0.85rem; color: var(--text-light); display: flex; align-items: center; justify-content: center; gap: 6px; }
 
-        /* =========================================
-           FOOTER - Always Dark Mode with White Text
-           ========================================= */
-        .footer { 
-            background: linear-gradient(135deg, #0A1929 0%, #132F43 100%);
-            color: #FFFFFF;
-            border-top: 1px solid #1E3A4D;
-            padding: 60px 0 30px; 
-        }
+        /* FOOTER */
+        .footer { background-color: #0F172A; color: #FFFFFF; border-top: 1px solid #334155; padding: 60px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
         .footer-brand .logo { margin-bottom: 16px; }
         .footer-brand p { color: #FFFFFF; font-size: 0.9rem; line-height: 1.6; max-width: 320px; }
@@ -814,51 +536,23 @@
         .footer-links li { margin-bottom: 12px; }
         .footer-links a { color: #FFFFFF; font-size: 0.9rem; }
         .footer-links a:hover { color: var(--highlight); }
-        .footer-bottom { border-top: 1px solid #1E3A4D; padding-top: 24px; text-align: center; color: #FFFFFF; font-size: 0.8rem; }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 24px; text-align: center; color: #FFFFFF; font-size: 0.8rem; }
 
-        /* =========================================
-           LOGO SPLASH ANIMATION - Enhanced
-           ========================================= */
+        /* SPLASH */
         .logo-splash {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--bg-body) 0%, var(--bg-soft) 100%);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--bg-body); z-index: 9999;
+            display: flex; align-items: center; justify-content: center;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .logo-splash.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
+        .logo-splash.hidden { opacity: 0; pointer-events: none; }
         .logo-splash img {
-            height: 200px;
-            width: auto;
-            object-fit: contain;
+            height: 200px; width: auto; object-fit: contain;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: pulse 2s ease-in-out infinite;
         }
+        .logo-splash.hidden img { height: 72px; transform: translateY(-50vh); }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .logo-splash.hidden img {
-            height: 72px;
-            transform: translateY(-50vh);
-        }
-
-        /* =========================================
-           RESPONSIVE DESIGN
-           ========================================= */
+        /* RESPONSIVE */
         @media (min-width: 1101px) {
             .mobile-overlay { display: none !important; }
         }
@@ -866,15 +560,140 @@
         @media (max-width: 1100px) {
             .nav-menu { display: none; }
             .header-phone { display: none; }
-            .mobile-menu-btn { display: block; }
+            
+            .mobile-menu-btn { 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 56px;
+                height: 56px;
+                background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+                border: 2px solid var(--highlight);
+                border-radius: 14px;
+                cursor: pointer;
+                box-shadow: 0 4px 16px rgba(37, 60, 109, 0.25);
+                transition: var(--transition);
+                position: relative;
+                animation: hamburgerPulse 2.5s infinite;
+            }
+            @keyframes hamburgerPulse {
+                0%, 100% { box-shadow: 0 4px 16px rgba(37, 60, 109, 0.25), 0 0 0 0 rgba(242, 132, 47, 0.4); }
+                50% { box-shadow: 0 4px 16px rgba(37, 60, 109, 0.25), 0 0 0 8px rgba(242, 132, 47, 0); }
+            }
+            .mobile-menu-btn:hover { transform: scale(1.05); background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-hover) 100%); }
+
+            .mobile-menu-btn::before,
+            .mobile-menu-btn::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 26px;
+                height: 3px;
+                background: #FFFFFF;
+                border-radius: 2px;
+            }
+            .mobile-menu-btn::before { top: 17px; }
+            .mobile-menu-btn::after { bottom: 17px; }
+            .mobile-menu-btn span {
+                display: block;
+                width: 26px;
+                height: 3px;
+                background: #FFFFFF;
+                border-radius: 2px;
+            }
             
             .header { padding: 16px 0; }
-            .header-top { 
-                padding-bottom: 0; 
-                justify-content: center;
-            }
+            .header-top { padding-bottom: 0; justify-content: center; }
             .header-bottom { display: none; }
             .logo img { height: 48px; }
+
+            .services-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 16px;
+                padding-bottom: 20px;
+                margin: 0 -24px;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .service-card { min-width: 280px; max-width: 280px; scroll-snap-align: start; flex-shrink: 0; }
+
+            .reviews-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 16px;
+                padding-bottom: 20px;
+                margin: 0 -24px;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .review-card { min-width: 280px; max-width: 280px; scroll-snap-align: start; flex-shrink: 0; }
+
+            /* MOBILE BUTTONS - SMALLER, RESPONSIVE */
+            .hero-buttons {
+                gap: 12px;
+                flex-direction: column;
+                align-items: stretch;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 0.875rem;
+                border-radius: 12px;
+                gap: 6px;
+            }
+            .hero-buttons .btn svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .quote-form .btn {
+                width: 100% !important;
+                padding: 12px 20px !important;
+                font-size: 0.875rem !important;
+                border-radius: 12px;
+            }
+
+            .modal .btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 0.875rem;
+                border-radius: 12px;
+                gap: 6px;
+            }
+            .modal .btn svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .mobile-actions .btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 0.875rem;
+                border-radius: 12px;
+                gap: 6px;
+            }
+            .mobile-actions .btn svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .mobile-phone {
+                padding: 12px 16px;
+                font-size: 0.9rem;
+                border-radius: 12px;
+            }
+            .mobile-phone svg {
+                width: 16px;
+                height: 16px;
+            }
         }
 
         @media (max-width: 900px) {
@@ -886,32 +705,56 @@
 
         @media (max-width: 640px) {
             .hero-content h1 { font-size: 2rem; }
-            .hero-buttons .btn { width: 100%; }
             .section-header h2, .why-us h2 { font-size: 1.75rem; }
             .form-row { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .quote-form { padding: 24px; }
+
+            .mobile-menu-btn { width: 50px; height: 50px; }
+            .mobile-menu-btn::before,
+            .mobile-menu-btn::after,
+            .mobile-menu-btn span { width: 22px; }
+            .mobile-menu-btn::before { top: 15px; }
+            .mobile-menu-btn::after { bottom: 15px; }
+
+            /* Even smaller buttons on very small screens */
+            .hero-buttons .btn {
+                padding: 11px 18px;
+                font-size: 0.825rem;
+            }
+            .quote-form .btn {
+                padding: 11px 18px !important;
+                font-size: 0.825rem !important;
+            }
+            .modal .btn {
+                padding: 11px 18px;
+                font-size: 0.825rem;
+            }
+            .mobile-actions .btn {
+                padding: 11px 18px;
+                font-size: 0.825rem;
+            }
+            .mobile-phone {
+                padding: 11px 14px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- LOGO SPLASH SCREEN (Desktop & Mobile) -->
     <div class="logo-splash" id="logoSplash">
         <img src="https://cdn.shopify.com/s/files/1/0694/4053/6660/files/ChatGPT_Image_22_._2026_._20_34_13.png?v=1790094863" alt="All Quality Insurance Logo">
     </div>
 
-    <!-- HEADER - Centered Logo Layout (Desktop) -->
     <header class="header">
         <div class="container">
-            <!-- Top Row: Centered Logo -->
             <div class="header-top">
                 <a href="#" class="logo">
                     <img src="https://cdn.shopify.com/s/files/1/0694/4053/6660/files/ChatGPT_Image_22_._2026_._20_34_13.png?v=1790094863" alt="All Quality Insurance Logo">
                 </a>
             </div>
             
-            <!-- Bottom Row: Navigation + Actions -->
             <div class="header-bottom">
                 <nav class="nav-menu" id="navMenu">
                     <a href="#services" class="nav-link">Insurance</a>
@@ -931,7 +774,6 @@
                         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </button>
                     <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle dark mode">
-                        <!-- Sun Icon -->
                         <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -943,7 +785,6 @@
                             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
-                        <!-- Moon Icon -->
                         <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
@@ -951,12 +792,12 @@
                 </div>
             </div>
             
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <!-- MOBILE OVERLAY MENU (eCompNow Style) -->
     <div class="mobile-overlay" id="mobileOverlay">
         <div class="mobile-header">
             <div class="mobile-logo">
@@ -985,7 +826,6 @@
         </div>
 
         <div class="mobile-theme-toggle" id="mobileThemeToggle">
-            <!-- Sun Icon -->
             <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -997,7 +837,6 @@
                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <!-- Moon Icon -->
             <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
@@ -1005,7 +844,6 @@
         </div>
     </div>
 
-    <!-- HERO SECTION (Text Only, No Image) -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -1026,14 +864,12 @@
         </div>
     </section>
 
-    <!-- WHY US SECTION -->
     <section id="why-us" class="why-us">
         <div class="container">
             <div class="why-us-inner">
                 <div class="section-label">Why All Quality</div>
                 <h2>Save Time, Save Money.</h2>
                 <p class="why-us-subtitle">We've turned buying business insurance into a fast, simple experience, shopping top carriers to land you the right coverage at the best price.</p>
-                
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -1056,7 +892,6 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION - Mobile Carousel -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
@@ -1090,7 +925,6 @@
         </div>
     </section>
 
-    <!-- REVIEWS SECTION - Mobile Carousel -->
     <section id="reviews" class="reviews">
         <div class="container">
             <div class="section-header">
@@ -1136,7 +970,6 @@
         </div>
     </section>
 
-    <!-- QUOTE / CONTACT SECTION -->
     <section id="quote" class="quote-section">
         <div class="container">
             <div class="quote-wrapper">
@@ -1144,16 +977,14 @@
                     <div class="section-label" style="text-align: left;">Get Started</div>
                     <h2>Ready to get covered?</h2>
                     <p>Contact us today to get a quote tailored to your care facility. We provide the lowest rates on the market with first-class service.</p>
-                    
                     <div class="contact-highlight">
-                        <span>Prefer to speak with a licensed agent directly?</span>
+                        <span>Prefer to speak with an agent directly?</span>
                         <a href="tel:18189686652">1-(818) 968-6652</a>
                     </div>
                 </div>
 
                 <form class="quote-form" id="mainQuoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                     <h3>Request a Quote</h3>
-                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
@@ -1164,12 +995,10 @@
                             <input type="tel" id="phone" name="phone" required placeholder="(818) 000-0000">
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="email">Email Address *</label>
                         <input type="email" id="email" name="email" required placeholder="john@example.com">
                     </div>
-
                     <div class="form-group">
                         <label for="service">Insurance Product Needed *</label>
                         <select id="service" name="service" required>
@@ -1180,24 +1009,20 @@
                             <option value="Other">Other / Not Sure</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="message">Additional Details</label>
                         <textarea id="message" name="message" rows="4" placeholder="Tell us about your facility or any specific questions..."></textarea>
                     </div>
-
                     <button type="submit" class="btn btn-primary" style="width: 50%; padding: 14px 32px; font-size: 1rem;">
                         Submit Quote Request
                         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </button>
-                    
                     <p class="form-privacy"> Your information is secure and will only be used to provide your insurance quote.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER - Always Dark Mode with White Text -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -1230,7 +1055,6 @@
         </div>
     </footer>
 
-    <!-- QUOTE MODAL -->
     <div class="modal-overlay" id="quoteModal" onclick="closeModalOnOverlay(event, 'quoteModal')">
         <div class="modal">
             <div class="modal-header">
@@ -1272,25 +1096,22 @@
                         <label for="modal-message">Additional Details</label>
                         <textarea id="modal-message" name="message" rows="3" placeholder="Tell us about your facility..."></textarea>
                     </div>
-                    
                     <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px 32px; font-size: 1rem;">
                         Send Quote Request
                         <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                     </button>
-                    
                     <p class="form-privacy">🔒 Your information is secure and will only be used to provide your insurance quote.</p>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- SPECIALIST MODAL -->
     <div class="modal-overlay" id="specialistModal" onclick="closeModalOnOverlay(event, 'specialistModal')">
         <div class="modal">
             <div class="modal-header">
                 <div>
                     <h3>Talk to a Specialist</h3>
-                    <p>Our licensed insurance experts are ready to help you.</p>
+                    <p>Our insurance experts are ready to help you.</p>
                 </div>
                 <button class="modal-close" onclick="closeModal('specialistModal')" aria-label="Close">
                     <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -1316,30 +1137,21 @@
         </div>
     </div>
 
-    <!-- SCRIPTS -->
     <script>
-        // Logo Splash Animation (Desktop & Mobile)
         window.addEventListener('load', () => {
             const splash = document.getElementById('logoSplash');
             if (splash) {
-                setTimeout(() => {
-                    splash.classList.add('hidden');
-                }, 800);
-                
-                setTimeout(() => {
-                    splash.style.display = 'none';
-                }, 1600);
+                setTimeout(() => { splash.classList.add('hidden'); }, 800);
+                setTimeout(() => { splash.style.display = 'none'; }, 1600);
             }
         });
 
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
             overlay.classList.toggle('active');
             document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
         }
 
-        // Modal Functions
         function openModal(id) {
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1351,9 +1163,7 @@
         }
 
         function closeModalOnOverlay(event, id) {
-            if (event.target === event.currentTarget) {
-                closeModal(id);
-            }
+            if (event.target === event.currentTarget) closeModal(id);
         }
 
         document.addEventListener('keydown', (e) => {
@@ -1365,7 +1175,6 @@
             }
         });
 
-        // Dark/Light Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
         const mobileThemeToggle = document.getElementById('mobileThemeToggle');
         const sunIcons = document.querySelectorAll('.sun-icon');
@@ -1396,7 +1205,6 @@
             }
         }
 
-        // Form submission handler
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function(e) {
                 if (this.action.includes('YOUR_FORM_ID')) {
